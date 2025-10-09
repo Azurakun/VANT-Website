@@ -6,29 +6,48 @@
     <title>Your Name | Digital Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
     <header>
         <div class="container">
-            <h1>Your Name</h1>
-            <p>Creative Developer & Digital Artist</p>
+            <h1 class="fade-in">Your Name</h1>
+            <p class="fade-in">Creative Developer & Digital Artist</p>
         </div>
     </header>
 
-    <section id="featured-section">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <div id="featured-grid">
+    <section id="about-me" class="hidden">
+        <div class="container about-me-container">
+            <div class="about-photo">
+                <img src="https://via.placeholder.com/250" alt="Your Photo">
+            </div>
+            <div class="about-details">
+                <h2>About Me</h2>
+                <p>
+                    Hello! I'm a passionate digital creator with a love for building beautiful, intuitive, and high-performance web applications. I specialize in front-end development and UI/UX design, always striving to create engaging user experiences.
+                </p>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fas fa-envelope"></i></a>
                 </div>
+            </div>
         </div>
     </section>
 
-    <main>
+    <section id="featured-section" class="hidden">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div id="featured-grid"></div>
+        </div>
+    </section>
+
+    <main class="hidden">
         <div class="container">
             <h2>All Projects</h2>
-            <div id="project-grid" class="project-grid">
-                </div>
+            <div id="project-grid" class="project-grid"></div>
         </div>
     </main>
 

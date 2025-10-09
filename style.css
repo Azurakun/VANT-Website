@@ -1,10 +1,10 @@
-/* General Styling */
+/* General Styling with NEW Color Palette */
 :root {
-    --primary-color: #6a11cb;
-    --secondary-color: #2575fc;
-    --background-color: #121212;
-    --surface-color: #1e1e1e;
-    --text-color: #e0e0e0;
+    --primary-color: #00f2ea;   /* Vibrant Teal */
+    --secondary-color: #d400ff; /* Glowing Purple/Pink */
+    --background-color: #0d0c1d; /* Deep Indigo */
+    --surface-color: #16152d;   /* Darker Indigo */
+    --text-color: #f0f0f0;
     --text-muted-color: #a0a0a0;
 }
 
@@ -22,17 +22,17 @@ body {
     padding: 0 2rem;
 }
 
-/* Header */
+/* Header with New Gradient */
 header {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(45deg, #4e29a3, #0d0c1d);
     color: white;
     text-align: center;
-    padding: 4rem 0;
+    padding: 5rem 0;
 }
 
 header h1 {
     margin: 0;
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 700;
 }
 
@@ -42,32 +42,120 @@ header p {
     font-weight: 300;
 }
 
-/* Main Content & Project Grid */
-main {
-    padding: 3rem 0;
+/* About Me Section Styling */
+#about-me {
+    padding: 4rem 0;
+    background-color: var(--surface-color);
 }
 
-main h2 {
+.about-me-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about-photo img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 25px rgba(0, 242, 234, 0.4);
+}
+
+.about-details h2 {
+    font-size: 2.5rem;
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.social-links {
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    color: var(--text-muted-color);
+    font-size: 1.8rem;
+    margin-right: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* Featured & Main Sections */
+#featured-section, main {
+    padding: 4rem 0;
+}
+
+h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
     position: relative;
 }
 
-main h2::after {
+h2::after {
     content: '';
     display: block;
     width: 80px;
     height: 4px;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     margin: 0.5rem auto 0;
     border-radius: 2px;
 }
 
+/* Project Grids */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
+}
+
+#featured-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+/* Card Styling & Animations */
+.featured-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Tilt animation transition */
+}
+
+.featured-card:hover {
+    transform: scale(1.03) rotateZ(-1deg); /* Tilt effect */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.featured-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.featured-info {
+    padding: 1rem 2rem 1rem 0;
+}
+
+.featured-info h3 {
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+
+.featured-info p {
+    color: var(--text-muted-color);
+    font-size: 0.95rem;
 }
 
 .project-card {
@@ -76,13 +164,13 @@ main h2::after {
     overflow: hidden;
     cursor: pointer;
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 20px var(--primary-color); /* Glow effect */
 }
 
 .project-card img {
@@ -90,7 +178,6 @@ main h2::after {
     height: 220px;
     object-fit: cover;
     display: block;
-    transition: opacity 0.3s ease;
 }
 
 .project-card .overlay {
@@ -116,9 +203,38 @@ main h2::after {
     opacity: 1;
 }
 
-/* Modal Styling */
+/* Button & Tag Styling */
+.tag, .featured-info .tag, #modal-tags .tag {
+    display: inline-block;
+    background: #3a1b5c;
+    color: var(--primary-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.btn-live {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: #0d0c1d; /* Dark text for better contrast */
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-live:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 242, 234, 0.5);
+}
+
+/* Modal and Gallery Styling (largely unchanged) */
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -126,7 +242,7 @@ main h2::after {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.85);
     animation: fadeIn 0.5s;
 }
 
@@ -138,7 +254,7 @@ main h2::after {
     max-width: 700px;
     width: 90%;
     position: relative;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    box-shadow: 0 0 40px var(--secondary-color);
     animation: slideIn 0.5s;
 }
 
@@ -148,86 +264,14 @@ main h2::after {
     top: 1rem;
     right: 1.5rem;
     font-size: 2rem;
-    font-weight: bold;
     cursor: pointer;
     transition: color 0.2s ease;
 }
 
 .close-button:hover {
-    color: var(--text-color);
+    color: var(--primary-color);
 }
 
-#modal-img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-}
-
-#modal-title {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-#modal-tags {
-    margin-bottom: 1.5rem;
-}
-
-#modal-tags .tag {
-    display: inline-block;
-    background: var(--primary-color);
-    color: white;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    margin-right: 0.5rem;
-    margin-top: 0.5rem;
-}
-
-#modal-description {
-    color: var(--text-muted-color);
-    line-height: 1.8;
-}
-
-.btn-live {
-    display: inline-block;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: 0.8rem 1.5rem;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-    margin-top: 1rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn-live:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(37, 117, 252, 0.4);
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideIn {
-    from { transform: translateY(-50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2.5rem;
-    }
-    .modal-content {
-        margin: 20% auto;
-    }
-}
-
-/* Modal Gallery Styling */
 .gallery-container {
     position: relative;
     width: 100%;
@@ -237,15 +281,14 @@ main h2::after {
 #modal-gallery-images img {
     width: 100%;
     border-radius: 8px;
-    display: none; /* Hide all images by default */
+    display: none;
 }
 
 #modal-gallery-images img.active {
-    display: block; /* Show only the active image */
+    display: block;
     animation: fadeIn 0.5s;
 }
 
-/* Gallery Navigation Arrows */
 .prev-btn, .next-btn {
     cursor: pointer;
     position: absolute;
@@ -268,98 +311,63 @@ main h2::after {
 }
 
 .prev-btn:hover, .next-btn:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 242, 234, 0.5);
 }
 
-/* Featured Section */
-#featured-section {
-    padding: 3rem 0;
-    background-color: var(--surface-color); /* Makes the section stand out */
-}
-
-#featured-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    position: relative;
-}
-
-#featured-section h2::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    margin: 0.5rem auto 0;
-    border-radius: 2px;
-}
-
-#featured-grid {
-    display: grid;
-    gap: 2rem;
-}
-
-.featured-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Image on left, text on right */
-    align-items: center;
-    gap: 2rem;
-    background-color: #2a2a2a;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.featured-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-.featured-card .featured-image img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    display: block;
-}
-
-.featured-card .featured-info {
-    padding: 1rem 2rem 1rem 0;
-}
-
-.featured-info h3 {
-    font-size: 1.8rem;
-    margin-top: 0;
-}
-
-.featured-info p {
-    color: var(--text-muted-color);
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-}
-
-.featured-info .tags {
-    margin-top: 1rem;
-}
-
-.featured-info .tag {
-    display: inline-block;
-    background: var(--primary-color);
-    color: white;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    margin-right: 0.5rem;
+#modal-title {
+    font-size: 2rem;
     margin-bottom: 0.5rem;
 }
 
-/* Responsive adjustments for featured card */
+#modal-description {
+    color: var(--text-muted-color);
+    line-height: 1.8;
+}
+
+/* Animations */
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(20px);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+.fade-in {
+    animation: fadeIn 1s 0.2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    .about-me-container {
+        flex-direction: column;
+        text-align: center;
+    }
     .featured-card {
-        grid-template-columns: 1fr; /* Stack image on top of text */
+        grid-template-columns: 1fr;
     }
     .featured-card .featured-info {
         padding: 1.5rem;
+    }
+    .modal-content {
+        margin: 15% auto;
     }
 }
