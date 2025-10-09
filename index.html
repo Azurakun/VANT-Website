@@ -1,71 +1,1060 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Digital Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>VANT (Vibra & AnTiMa) Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Darker, cooler gray */
+            color: #e5e7eb;
+            overflow-x: hidden;
+        }
+        /* Custom scrollbar for a more modern look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280;
+        }
+        /* Refined fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .fade-in-section {
+            opacity: 0; /* Initially hidden */
+        }
+        .fade-in-visible {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        /* Modal styles */
+        .modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s ease;
+        }
+
+        /* Animated Background */
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place it behind everything */
+            overflow: hidden;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(22, 163, 174, 0.15) 0%, rgba(22, 163, 174, 0) 70%);
+            animation: move 25s infinite linear;
+        }
+
+        .circle.alt-color {
+            background: radial-gradient(circle, rgba(225, 29, 72, 0.1) 0%, rgba(225, 29, 72, 0) 70%);
+        }
+
+        .circle:nth-child(1) {
+            width: 30vw; height: 30vw; top: 10%; left: 10%; animation-duration: 25s;
+        }
+        .circle:nth-child(2) {
+            width: 40vw; height: 40vw; bottom: 5%; right: 5%; animation-duration: 30s; animation-delay: -5s;
+        }
+        .circle:nth-child(3) {
+            width: 25vw; height: 25vw; top: 50%; left: 50%; animation-duration: 35s; animation-delay: -10s;
+        }
+        .circle:nth-child(4) {
+             width: 20vw; height: 20vw; top: 20%; right: 15%; animation-duration: 40s; animation-delay: -15s;
+        }
+        .circle:nth-child(5) {
+             width: 35vw; height: 35vw; bottom: 15%; left: 5%; animation-duration: 28s; animation-delay: -20s;
+        }
+
+
+        @keyframes move {
+            0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+            25% { transform: translate(10vw, -15vh) rotate(90deg) scale(1.1); }
+            50% { transform: translate(-15vw, 10vh) rotate(180deg) scale(0.9); }
+            75% { transform: translate(5vw, 15vh) rotate(270deg) scale(1.2); }
+            100% { transform: translate(0, 0) rotate(360deg) scale(1); }
+        }
+
+        /* Particles */
+        #particles-container {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            bottom: -10px;
+            background-color: rgba(229, 231, 235, 0.2);
+            border-radius: 50%;
+            animation-name: floatUp;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-105vh);
+                opacity: 1;
+            }
+        }
+        
+        /* Shooting Stars */
+        .shooting-star {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 2px;
+            background: linear-gradient(-45deg, rgba(107, 114, 128, 0.8), transparent);
+            border-radius: 999px;
+            filter: drop-shadow(0 0 6px rgba(107, 114, 128, 0.5));
+            animation: tail 3s ease-in-out infinite, shooting 3s ease-in-out infinite;
+        }
+
+        @keyframes tail {
+            0% { width: 0; }
+            30% { width: 100px; }
+            100% { width: 0; }
+        }
+
+        @keyframes shooting {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(400px); }
+        }
+
+
+        /* Section Separator */
+        .section-separator {
+            width: 80%;
+            max-width: 400px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(75, 85, 99, 0.5), transparent);
+            margin: 0 auto;
+        }
+
+        /* Scroll Tracker and Dots */
+        #scroll-tracker-container.morphed #dot-left,
+        #scroll-tracker-container.morphed #dot-right {
+            opacity: 0;
+            transform: translateY(-50%) scale(0);
+        }
+
+        #scroll-tracker-container #dot-left,
+        #scroll-tracker-container #dot-right {
+            transition: opacity 0.5s ease, transform 0s, left 0s, right 0s;
+        }
+
+        #scroll-tracker-container.morphed #back-to-top-btn {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        #scroll-tracker-container #back-to-top-btn {
+            transform: translate(-50%, -50%) scale(0);
+        }
+
+        #scroll-tracker-container.morphed #dots-track {
+            opacity: 0;
+        }
+        #scroll-tracker-container {
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        /* Enhanced Hover Effect */
+        .card-hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 25px rgba(22, 163, 174, 0.3), 0 0 10px rgba(22, 163, 174, 0.2);
+        }
+
+        /* Animated Gradient Text for Hero */
+        .animated-gradient-text {
+            background: linear-gradient(90deg, #e5e7eb, #67e8f9, #e5e7eb);
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradient-animation 5s linear infinite;
+        }
+
+        @keyframes gradient-animation {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* Hero Button Glow */
+        .hero-button-glow:hover {
+            box-shadow: 0 0 20px rgba(22, 163, 174, 0.6), 0 0 10px rgba(22, 163, 174, 0.4);
+        }
+        
+        /* New Hero Background Animations */
+        #hero-radial-bg {
+            animation: pulse-gradient 10s infinite ease-in-out;
+        }
+
+        #hero-grid-bg {
+            animation: move-grid 60s linear infinite alternate;
+        }
+
+        @keyframes pulse-gradient {
+            0% { transform: scale(0.9); opacity: 0.8; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.9); opacity: 0.8; }
+        }
+
+        @keyframes move-grid {
+            from { background-position: 0 0; }
+            to { background-position: -56px -96px; }
+        }
+    </style>
 </head>
-<body>
+<body class="antialiased">
 
-    <header>
-        <div class="container">
-            <h1 class="fade-in">Your Name</h1>
-            <p class="fade-in">Creative Developer & Digital Artist</p>
-        </div>
-    </header>
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[100] bg-[#111827] flex items-center justify-center transition-opacity duration-500 ease-in-out">
+        <h1 class="text-4xl font-black text-white uppercase tracking-tighter animate-pulse">VANT</h1>
+    </div>
 
-    <section id="about-me" class="hidden">
-        <div class="container about-me-container">
-            <div class="about-photo">
-                <img src="https://via.placeholder.com/250" alt="Your Photo">
-            </div>
-            <div class="about-details">
-                <h2>About Me</h2>
-                <p>
-                    Hello! I'm a passionate digital creator with a love for building beautiful, intuitive, and high-performance web applications. I specialize in front-end development and UI/UX design, always striving to create engaging user experiences.
-                </p>
-                <div class="social-links">
-                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="#" target="_blank"><i class="fas fa-envelope"></i></a>
+    <!-- Language Switcher Loader -->
+    <div id="lang-loader" class="fixed inset-0 z-[101] bg-[#111827]/80 backdrop-blur-sm flex items-center justify-center transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none">
+        <div class="w-16 h-16 border-4 border-cyan-400 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle alt-color"></div>
+        <div class="circle alt-color"></div>
+        <div class="circle"></div>
+        <div id="particles-container"></div>
+        <div id="shooting-stars-container"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/50 backdrop-blur-md border-b border-gray-700 transition-transform duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#home" class="text-2xl font-bold tracking-tighter text-white">VANT</a>
+                </div>
+                <div class="hidden md:flex items-center">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" data-key="nav-about" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">About VANT</a>
+                        <a href="#vibra" data-key="nav-vibra" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Vibra</a>
+                        <a href="#antima" data-key="nav-antima" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">AnTiMa</a>
+                        <a href="#projects" data-key="nav-projects" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a>
+                        <a href="#developer" data-key="nav-developer" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">The Developer</a>
+                        <a href="#contact" data-key="nav-contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                    <!-- Language Dropdown -->
+                    <div class="relative ml-4" id="lang-switcher">
+                        <button id="lang-btn" type="button" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                            <span id="lang-text" class="font-bold">EN</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div id="lang-menu" class="absolute right-0 mt-2 w-32 bg-gray-800 border border-gray-700 rounded-md shadow-lg py-1 hidden opacity-0 transition-opacity duration-200">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700" data-lang-option="en">English</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700" data-lang-option="id">Indonesia</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <section id="featured-section" class="hidden">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <div id="featured-grid"></div>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main>
+        <!-- Section 1: Hero / Home -->
+        <section id="home" class="h-screen w-screen flex items-center justify-center relative overflow-hidden">
+            <!-- Background Gradient -->
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-900 via-gray-900 to-black"></div>
+            <div id="hero-grid-bg" class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+            <div id="hero-radial-bg" class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_rgba(22,_163,_74,_0.1),_transparent_40%)]"></div>
 
-    <main class="hidden">
-        <div class="container">
-            <h2>All Projects</h2>
-            <div id="project-grid" class="project-grid"></div>
-        </div>
-    </main>
-
-    <div id="project-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <div class="gallery-container">
-                <div id="modal-gallery-images"></div>
-                <a class="prev-btn">&#10094;</a>
-                <a class="next-btn">&#10095;</a>
+            <div class="text-center z-10 px-4">
+                <h1 id="hero-title" data-key="hero-title" class="animated-gradient-text text-5xl md:text-8xl font-black uppercase tracking-tighter mb-4">
+                    VANT Project
+                </h1>
+                <p id="hero-subtitle" data-key="hero-subtitle" class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-8">
+                    A fusion of Vibra & AnTiMa, pioneering the future through innovative solutions and creative endeavors.
+                </p>
+                <a href="#about" data-key="hero-button" class="hero-button-glow bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-cyan-500 transition-all duration-300 ease-in-out transform hover:scale-105">
+                    Explore Our Vision
+                </a>
             </div>
-            <h3 id="modal-title"></h3>
-            <div id="modal-tags"></div>
-            <p id="modal-description"></p>
-            <a id="modal-link" href="#" target="_blank" class="btn-live">View Live Project</a>
+             <!-- Scroll down indicator -->
+            <div class="absolute bottom-10 inset-x-0 flex flex-col items-center space-y-2 animate-bounce">
+                <span class="text-sm text-gray-400" data-key="scroll-down">Scroll Down</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- Section 2: About VANT & Mission -->
+        <section id="about" class="min-h-screen w-screen flex items-center justify-center bg-transparent py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="text-left">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4" data-key="about-title">Our Mission: Building the Future, Today.</h2>
+                    <p class="text-slate-300 text-lg mb-6" data-key="about-subtitle">
+                        VANT Project is a creative syndicate born from the collaboration of <strong>Vibra</strong> and <strong>AnTiMa</strong>. We are dedicated to pushing the boundaries of technology to create meaningful and impactful digital experiences.
+                    </p>
+                    <p id="mission-statement" class="text-slate-400 text-base leading-relaxed mb-8" data-key="about-desc">
+                        Our core mission is to solve real-world problems through a blend of elegant design, robust engineering, and user-centric philosophy. We believe that technology should be accessible, intuitive, and empowering for everyone. From developing cutting-edge applications to crafting immersive web platforms, we strive for excellence in every line of code and every pixel we design.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <a href="#projects" class="text-cyan-400 font-semibold hover:text-cyan-300 transition-colors text-lg" data-key="about-button">See Our Work →</a>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="card-hover-effect bg-gray-800/50 border border-gray-700 p-8 rounded-2xl shadow-lg h-full flex flex-col">
+                        <h3 class="text-xl font-bold text-white mb-2" data-key="mission-innovation-title">Innovation</h3>
+                        <p class="text-slate-400 flex-grow" data-key="mission-innovation-desc">We constantly explore new technologies to deliver forward-thinking solutions.</p>
+                    </div>
+                    <div class="card-hover-effect bg-gray-800/50 border border-gray-700 p-8 rounded-2xl shadow-lg mt-8 h-full flex flex-col">
+                         <h3 class="text-xl font-bold text-white mb-2" data-key="mission-quality-title">Quality</h3>
+                        <p class="text-slate-400 flex-grow" data-key="mission-quality-desc">We are committed to the highest standards of quality and performance in all our projects.</p>
+                    </div>
+                     <div class="card-hover-effect bg-gray-800/50 border border-gray-700 p-8 rounded-2xl shadow-lg h-full flex flex-col">
+                        <h3 class="text-xl font-bold text-white mb-2" data-key="mission-collab-title">Collaboration</h3>
+                        <p class="text-slate-400 flex-grow" data-key="mission-collab-desc">We believe the best ideas come from teamwork and open communication.</p>
+                    </div>
+                     <div class="card-hover-effect bg-gray-800/50 border border-gray-700 p-8 rounded-2xl shadow-lg mt-8 h-full flex flex-col">
+                        <h3 class="text-xl font-bold text-white mb-2" data-key="mission-user-title">User-Centric</h3>
+                        <p class="text-slate-400 flex-grow" data-key="mission-user-desc">Our users are at the heart of everything we create, ensuring intuitive and engaging products.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-separator"></div>
+        
+        <!-- Section 3: About Vibra -->
+        <section id="vibra" class="min-h-screen w-screen flex items-center justify-center bg-transparent py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                 <div class="relative w-full h-full min-h-[400px]">
+                    <div class="absolute inset-0 bg-cyan-800/30 rounded-3xl transform -rotate-6"></div>
+                    <img src="https://placehold.co/600x700/111827/16a3b2?text=Vibra" alt="Vibra Project" class="relative w-full h-full object-cover rounded-2xl shadow-2xl">
+                </div>
+                <div class="text-left">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4" data-key="vibra-title">The Vibra Initiative</h2>
+                     <p class="text-cyan-400 text-lg mb-6" data-key="vibra-subtitle">Harmonizing Technology with Human Experience</p>
+                    <p class="text-slate-300 text-base leading-relaxed mb-4" data-key="vibra-desc1">
+                        Vibra is the soul of our creative endeavors, focusing on the synergy between aesthetics and functionality. It represents our commitment to building interfaces and experiences that are not only powerful but also intuitive and emotionally resonant.
+                    </p>
+                    <p class="text-slate-400 text-base leading-relaxed" data-key="vibra-desc2">
+                        Projects under the Vibra initiative prioritize user-centric design, fluid animations, and a polished final product that feels alive. We believe that the best technology is invisible, seamlessly integrating into the user's life and amplifying their capabilities.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="section-separator"></div>
+
+        <!-- Section 4: About AnTiMa -->
+        <section id="antima" class="min-h-screen w-screen flex items-center justify-center bg-transparent py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="text-left md:order-2">
+                     <div class="relative w-full h-full min-h-[400px]">
+                        <div class="absolute inset-0 bg-rose-800/30 rounded-3xl transform rotate-6"></div>
+                        <img src="https://placehold.co/600x700/111827/e11d48?text=AnTiMa" alt="AnTiMa Project" class="relative w-full h-full object-cover rounded-2xl shadow-2xl">
+                    </div>
+                </div>
+                <div class="text-left md:order-1">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4" data-key="antima-title">The AnTiMa Framework</h2>
+                    <p class="text-rose-400 text-lg mb-6" data-key="antima-subtitle">Engineering Robust and Scalable Systems</p>
+                    <p class="text-slate-300 text-base leading-relaxed mb-4" data-key="antima-desc1">
+                       AnTiMa is the backbone of our technical architecture. It represents our passion for clean, efficient, and powerful engineering. This is where we tackle complex problems with robust logic and scalable solutions that stand the test of time.
+                    </p>
+                    <p class="text-slate-400 text-base leading-relaxed" data-key="antima-desc2">
+                        The AnTiMa framework guides our development process, emphasizing modularity, performance, and security. Every project built on AnTiMa principles is designed to be reliable, maintainable, and ready to grow, ensuring a solid foundation for any application.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-separator"></div>
+
+        <!-- Section 5: Featured Project -->
+        <section id="featured" class="w-screen bg-transparent py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                     <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4" data-key="featured-title">Featured Project</h2>
+                     <p class="text-slate-300 text-lg max-w-3xl mx-auto" data-key="featured-subtitle">A glimpse into our flagship creation, embodying our commitment to excellence and innovation.</p>
+                </div>
+                <div class="card-hover-effect bg-gray-800 border border-gray-700 rounded-2xl grid grid-cols-1 lg:grid-cols-2 overflow-hidden shadow-2xl shadow-cyan-500/10">
+                    <div class="p-8 md:p-12 flex flex-col justify-center">
+                        <h3 class="text-3xl font-bold text-white mb-3">Discord AI Assistant - AnTiMa</h3>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                             <span class="bg-cyan-500/20 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">Python</span>
+                             <span class="bg-cyan-500/20 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">MongoDB</span>
+                             <span class="bg-cyan-500/20 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">Google Gemini</span>
+                        </div>
+                        <p class="text-slate-400 mb-6 leading-relaxed" data-key="featured-desc">
+                           Project Alpha is a comprehensive web application designed to streamline project management for creative teams. It features real-time collaboration, task tracking, and a beautiful, intuitive interface built with the latest web technologies.
+                        </p>
+                        <button data-project-id="alpha" class="open-modal-btn bg-cyan-600 text-white font-bold py-3 px-6 rounded-lg text-base hover:bg-cyan-500 transition-transform transform hover:scale-105 duration-300 ease-in-out self-start" data-key="featured-button">
+                           View Case Study
+                        </button>
+                    </div>
+                    <div class="min-h-[300px] lg:min-h-0">
+                         <img src="https://placehold.co/800x600/1f2937/a7a7a7?text=Project+Alpha" alt="Featured Project" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="section-separator"></div>
+
+        <!-- Section 6: Projects -->
+        <section id="projects" class="min-h-screen w-screen flex flex-col items-center justify-center bg-transparent py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4" data-key="projects-title">Our Creations</h2>
+                <p class="text-slate-300 text-lg max-w-3xl mx-auto mb-12" data-key="projects-subtitle">
+                    Here are some of the projects we're proud to have built. Each one is a testament to our passion for technology and design.
+                </p>
+            </div>
+            <div id="project-grid" class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full px-4">
+                <!-- Project cards will be injected here by JavaScript -->
+            </div>
+        </section>
+
+        <div class="section-separator"></div>
+
+        <!-- Section 7: About the Developer -->
+        <section id="developer" class="h-screen w-screen flex items-center justify-center bg-transparent py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto text-center">
+                <div>
+                    <img src="https://placehold.co/128x128/1f2937/a7a7a7?text=Me" alt="Developer Portrait" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-gray-700 shadow-lg">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-2" data-key="dev-name">Your Name Here</h2>
+                    <p class="text-cyan-400 text-lg mb-6" data-key="dev-title">Lead Developer & Visionary</p>
+                    <p class="text-slate-300 max-w-3xl mx-auto text-lg leading-relaxed" data-key="dev-bio">
+                        I am a passionate developer with a love for creating beautiful and functional digital experiences. Here you can write a short biography about yourself, your skills, your journey into tech, and what drives you. This is your space to connect with your audience.
+                    </p>
+                     <div class="mt-8 flex justify-center gap-6">
+                         <a href="#" class="text-gray-400 hover:text-white transition-colors card-hover-effect rounded-full"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg></a>
+                         <a href="#" class="text-gray-400 hover:text-white transition-colors card-hover-effect rounded-full"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
+                         <a href="#" class="text-gray-400 hover:text-white transition-colors card-hover-effect rounded-full"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.206v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H6.328C3.965 1 2 2.985 2 5.332v13.336C2 21.015 3.965 23 6.328 23h11.34c2.364 0 4.332-1.985 4.332-4.332V5.332C22 2.985 20.032 1 17.668 1z" clip-rule="evenodd" /></svg></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Contact Footer -->
+        <section id="contact" class="min-h-[50vh] w-screen flex items-center justify-center bg-transparent py-20 px-4 sm:px-6 lg:px-8 border-t border-gray-700">
+             <div class="text-center">
+                <h2 class="text-4xl font-bold text-white tracking-tight mb-4" data-key="contact-title">Get In Touch</h2>
+                <p class="text-slate-300 max-w-xl mx-auto mb-8" data-key="contact-subtitle">
+                    Have a question or want to collaborate? I'd love to hear from you.
+                </p>
+                <a href="mailto:email@example.com" class="bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-cyan-500 transition-transform transform hover:scale-105 duration-300 ease-in-out" data-key="contact-button">
+                    Say Hello
+                </a>
+             </div>
+        </section>
+    </main>
+    
+    <footer id="page-footer" class="bg-black py-4 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
+            <p data-key="footer-text">&copy; 2024 VANT Project. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 invisible opacity-0">
+        <div class="modal-content bg-gray-900 border border-gray-700 w-full max-w-4xl max-h-[90vh] rounded-2xl shadow-2xl shadow-black/50 overflow-hidden flex flex-col transform scale-95">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between p-4 border-b border-gray-700 flex-shrink-0">
+                <h3 id="modal-title" class="text-2xl font-bold text-white"></h3>
+                <button id="close-modal-btn" class="text-gray-400 hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="p-6 overflow-y-auto">
+                <!-- Image Showcase -->
+                <div class="relative mb-6">
+                    <div id="modal-image-container" class="aspect-video bg-gray-800 rounded-lg overflow-hidden relative">
+                         <!-- Images will be injected here -->
+                    </div>
+                    <button id="prev-image-btn" class="absolute top-1/2 left-2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/80 transition-colors">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                    </button>
+                    <button id="next-image-btn" class="absolute top-1/2 right-2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/80 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                    </button>
+                </div>
+
+                <!-- Tags and Description -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="md:col-span-2">
+                        <h4 class="text-xl font-bold text-white mb-2" data-key="modal-about-title">About this project</h4>
+                        <p id="modal-description" class="text-slate-300 leading-relaxed"></p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-white mb-2" data-key="modal-tech-title">Technologies Used</h4>
+                        <div id="modal-tags" class="flex flex-wrap gap-2"></div>
+                        <div class="mt-6">
+                           <h4 class="text-xl font-bold text-white mb-3" data-key="modal-links-title">Links</h4>
+                           <div class="flex flex-col space-y-3">
+                             <a id="modal-live-link" href="#" target="_blank" class="flex items-center gap-2 text-cyan-400 hover:text-cyan-300">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                               <span data-key="modal-live-link">Live Preview</span>
+                             </a>
+                             <a id="modal-repo-link" href="#" target="_blank" class="flex items-center gap-2 text-cyan-400 hover:text-cyan-300">
+                               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                               <span data-key="modal-repo-link">Code Repository</span>
+                             </a>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-tracker-container" class="fixed bottom-4 left-0 right-0 w-full h-16 z-40 pointer-events-none flex items-center justify-center">
+        <div class="relative w-full max-w-xs h-10 flex items-center justify-center">
+            <!-- The track that dots move in -->
+            <div id="dots-track" class="absolute top-1/2 left-0 w-full h-2 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-full transition-opacity duration-500">
+                <div id="dot-left" class="absolute top-1/2 w-3 h-3 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(22,163,174,0.8)]" style="left: 0px; transform: translateY(-50%)"></div>
+                <div id="dot-right" class="absolute top-1/2 w-3 h-3 bg-rose-400 rounded-full shadow-[0_0_10px_rgba(225,29,72,0.8)]" style="right: 0px; transform: translateY(-50%)"></div>
+            </div>
+            <!-- The button that appears -->
+            <button id="back-to-top-btn" class="absolute top-1/2 left-1/2 opacity-0 pointer-events-none transition-all duration-300 bg-gray-800/50 border border-gray-700 rounded-full text-gray-300 hover:text-white px-4 py-2 text-sm font-semibold whitespace-nowrap">
+                <span data-key="back-to-top">Back to Top</span>
+            </button>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- TRANSLATIONS ---
+            const translations = {
+                en: {
+                    'nav-about': 'About VANT',
+                    'nav-vibra': 'Vibra',
+                    'nav-antima': 'AnTiMa',
+                    'nav-projects': 'Projects',
+                    'nav-developer': 'The Developer',
+                    'nav-contact': 'Contact',
+                    'hero-title': 'VANT Project',
+                    'hero-subtitle': 'A fusion of Vibra & AnTiMa, pioneering the future through innovative solutions and creative endeavors.',
+                    'hero-button': 'Explore Our Vision',
+                    'scroll-down': 'Scroll Down',
+                    'about-title': 'Our Mission: Building the Future, Today.',
+                    'about-subtitle': 'VANT Project is a creative syndicate born from the collaboration of <strong>Vibra</strong> and <strong>AnTiMa</strong>. We are dedicated to pushing the boundaries of technology to create meaningful and impactful digital experiences.',
+                    'about-desc': 'Our core mission is to solve real-world problems through a blend of elegant design, robust engineering, and user-centric philosophy. We believe that technology should be accessible, intuitive, and empowering for everyone. From developing cutting-edge applications to crafting immersive web platforms, we strive for excellence in every line of code and every pixel we design.',
+                    'about-button': 'See Our Work →',
+                    'mission-innovation-title': 'Innovation',
+                    'mission-innovation-desc': 'We constantly explore new technologies to deliver forward-thinking solutions.',
+                    'mission-quality-title': 'Quality',
+                    'mission-quality-desc': 'We are committed to the highest standards of quality and performance in all our projects.',
+                    'mission-collab-title': 'Collaboration',
+                    'mission-collab-desc': 'We believe the best ideas come from teamwork and open communication.',
+                    'mission-user-title': 'User-Centric',
+                    'mission-user-desc': 'Our users are at the heart of everything we create, ensuring intuitive and engaging products.',
+                    'vibra-title': 'The Vibra Initiative',
+                    'vibra-subtitle': 'Harmonizing Technology with Human Experience',
+                    'vibra-desc1': 'Vibra is the soul of our creative endeavors, focusing on the synergy between aesthetics and functionality. It represents our commitment to building interfaces and experiences that are not only powerful but also intuitive and emotionally resonant.',
+                    'vibra-desc2': 'Projects under the Vibra initiative prioritize user-centric design, fluid animations, and a polished final product that feels alive. We believe that the best technology is invisible, seamlessly integrating into the user\'s life and amplifying their capabilities.',
+                    'antima-title': 'The AnTiMa Framework',
+                    'antima-subtitle': 'Engineering Robust and Scalable Systems',
+                    'antima-desc1': 'AnTiMa is the backbone of our technical architecture. It represents our passion for clean, efficient, and powerful engineering. This is where we tackle complex problems with robust logic and scalable solutions that stand the test of time.',
+                    'antima-desc2': 'The AnTiMa framework guides our development process, emphasizing modularity, performance, and security. Every project built on AnTiMa principles is designed to be reliable, maintainable, and ready to grow, ensuring a solid foundation for any application.',
+                    'featured-title': 'Featured Project',
+                    'featured-subtitle': 'A glimpse into our flagship creation, embodying our commitment to excellence and innovation.',
+                    'featured-desc': 'Project Alpha is a comprehensive web application designed to streamline project management for creative teams. It features real-time collaboration, task tracking, and a beautiful, intuitive interface built with the latest web technologies.',
+                    'featured-button': 'View Case Study',
+                    'projects-title': 'Our Creations',
+                    'projects-subtitle': 'Here are some of the projects we\'re proud to have built. Each one is a testament to our passion for technology and design.',
+                    'card-learn-more': 'Learn More →',
+                    'dev-name': 'Your Name Here',
+                    'dev-title': 'Lead Developer & Visionary',
+                    'dev-bio': 'I am a passionate developer with a love for creating beautiful and functional digital experiences. Here you can write a short biography about yourself, your skills, your journey into tech, and what drives you. This is your space to connect with your audience.',
+                    'contact-title': 'Get In Touch',
+                    'contact-subtitle': 'Have a question or want to collaborate? I\'d love to hear from you.',
+                    'contact-button': 'Say Hello',
+                    'footer-text': '© 2024 VANT Project. All Rights Reserved.',
+                    'modal-about-title': 'About this project',
+                    'modal-tech-title': 'Technologies Used',
+                    'modal-links-title': 'Links',
+                    'modal-live-link': 'Live Preview',
+                    'modal-repo-link': 'Code Repository',
+                    'back-to-top': 'Back to Top'
+                },
+                id: {
+                    'nav-about': 'Tentang VANT',
+                    'nav-vibra': 'Vibra',
+                    'nav-antima': 'AnTiMa',
+                    'nav-projects': 'Proyek',
+                    'nav-developer': 'Pengembang',
+                    'nav-contact': 'Kontak',
+                    'hero-title': 'Proyek VANT',
+                    'hero-subtitle': 'Sebuah perpaduan Vibra & AnTiMa, merintis masa depan melalui solusi inovatif dan usaha kreatif.',
+                    'hero-button': 'Jelajahi Visi Kami',
+                    'scroll-down': 'Gulir ke Bawah',
+                    'about-title': 'Misi Kami: Membangun Masa Depan, Hari Ini.',
+                    'about-subtitle': 'Proyek VANT adalah sindikat kreatif yang lahir dari kolaborasi <strong>Vibra</strong> dan <strong>AnTiMa</strong>. Kami berdedikasi untuk mendorong batas-batas teknologi untuk menciptakan pengalaman digital yang bermakna dan berdampak.',
+                    'about-desc': 'Misi utama kami adalah menyelesaikan masalah dunia nyata melalui perpaduan desain yang elegan, rekayasa yang kuat, dan filosofi yang berpusat pada pengguna. Kami percaya bahwa teknologi harus dapat diakses, intuitif, dan memberdayakan semua orang. Dari mengembangkan aplikasi canggih hingga membuat platform web yang imersif, kami berusaha untuk mencapai keunggulan dalam setiap baris kode dan setiap piksel yang kami rancang.',
+                    'about-button': 'Lihat Karya Kami →',
+                    'mission-innovation-title': 'Inovasi',
+                    'mission-innovation-desc': 'Kami terus-menerus mengeksplorasi teknologi baru untuk memberikan solusi yang berwawasan ke depan.',
+                    'mission-quality-title': 'Kualitas',
+                    'mission-quality-desc': 'Kami berkomitmen pada standar kualitas dan kinerja tertinggi di semua proyek kami.',
+                    'mission-collab-title': 'Kolaborasi',
+                    'mission-collab-desc': 'Kami percaya ide-ide terbaik datang dari kerja tim dan komunikasi yang terbuka.',
+                    'mission-user-title': 'Berpusat pada Pengguna',
+                    'mission-user-desc': 'Pengguna kami adalah inti dari semua yang kami ciptakan, memastikan produk yang intuitif dan menarik.',
+                    'vibra-title': 'Inisiatif Vibra',
+                    'vibra-subtitle': 'Menyelaraskan Teknologi dengan Pengalaman Manusia',
+                    'vibra-desc1': 'Vibra adalah jiwa dari upaya kreatif kami, yang berfokus pada sinergi antara estetika dan fungsionalitas. Ini merupakan komitmen kami untuk membangun antarmuka dan pengalaman yang tidak hanya kuat tetapi juga intuitif dan berkesan secara emosional.',
+                    'vibra-desc2': 'Proyek di bawah inisiatif Vibra memprioritaskan desain yang berpusat pada pengguna, animasi yang lancar, dan produk akhir yang dipoles yang terasa hidup. Kami percaya bahwa teknologi terbaik tidak terlihat, terintegrasi secara mulus ke dalam kehidupan pengguna dan memperkuat kemampuan mereka.',
+                    'antima-title': 'Kerangka Kerja AnTiMa',
+                    'antima-subtitle': 'Membangun Sistem yang Kuat dan Skalabel',
+                    'antima-desc1': 'AnTiMa adalah tulang punggung arsitektur teknis kami. Ini mewakili hasrat kami untuk rekayasa yang bersih, efisien, dan kuat. Di sinilah kami menangani masalah kompleks dengan logika yang kuat dan solusi yang dapat diskalakan yang bertahan dalam ujian waktu.',
+                    'antima-desc2': 'Kerangka kerja AnTiMa memandu proses pengembangan kami, menekankan modularitas, kinerja, dan keamanan. Setiap proyek yang dibangun di atas prinsip AnTiMa dirancang agar andal, dapat dipelihara, dan siap untuk berkembang, memastikan fondasi yang kokoh untuk aplikasi apa pun.',
+                    'featured-title': 'Proyek Unggulan',
+                    'featured-subtitle': 'Sekilas tentang ciptaan andalan kami, yang mewujudkan komitmen kami terhadap keunggulan dan inovasi.',
+                    'featured-desc': 'Proyek Alpha adalah aplikasi web komprehensif yang dirancang untuk merampingkan manajemen proyek untuk tim kreatif. Ini fitur kolaborasi real-time, pelacakan tugas, dan antarmuka yang indah dan intuitif yang dibangun dengan teknologi web terbaru.',
+                    'featured-button': 'Lihat Studi Kasus',
+                    'projects-title': 'Karya Kami',
+                    'projects-subtitle': 'Berikut adalah beberapa proyek yang kami banggakan. Masing-masing adalah bukti semangat kami untuk teknologi dan desain.',
+                    'card-learn-more': 'Selengkapnya →',
+                    'dev-name': 'Nama Anda di Sini',
+                    'dev-title': 'Pengembang Utama & Visioner',
+                    'dev-bio': 'Saya seorang pengembang yang bersemangat dengan kecintaan untuk menciptakan pengalaman digital yang indah dan fungsional. Di sini Anda dapat menulis biografi singkat tentang diri Anda, keahlian Anda, perjalanan Anda ke dunia teknologi, dan apa yang mendorong Anda. Ini adalah ruang Anda untuk terhubung dengan audiens Anda.',
+                    'contact-title': 'Hubungi Kami',
+                    'contact-subtitle': 'Punya pertanyaan atau ingin berkolaborasi? Saya ingin sekali mendengar dari Anda.',
+                    'contact-button': 'Katakan Halo',
+                    'footer-text': '© 2024 Proyek VANT. Hak Cipta Dilindungi Undang-Undang.',
+                    'modal-about-title': 'Tentang proyek ini',
+                    'modal-tech-title': 'Teknologi yang Digunakan',
+                    'modal-links-title': 'Tautan',
+                    'modal-live-link': 'Pratinjau Langsung',
+                    'modal-repo-link': 'Repositori Kode',
+                    'back-to-top': 'Kembali ke Atas'
+                }
+            };
+
+            // --- DATA FOR PROJECTS ---
+            const projects = [
+                {
+                    id: 'alpha',
+                    title: 'TeaFlow - Learn With AI',
+                    shortDesc: {
+                        en: 'A comprehensive web app to streamline project management for creative teams.',
+                        id: 'Aplikasi web komprehensif untuk menyederhanakan manajemen proyek untuk tim kreatif.'
+                    },
+                    tags: ['React', 'Node.js', 'TailwindCSS', 'Firebase'],
+                    images: [
+                        'https://placehold.co/800x450/1f2937/a7a7a7?text=Alpha+Screenshot+1',
+                        'https://placehold.co/800x450/374151/e5e7eb?text=Alpha+Screenshot+2',
+                        'https://placehold.co/800x450/4b5563/d1d5db?text=Alpha+Screenshot+3'
+                    ],
+                    description: {
+                        en: 'Project Alpha is a full-stack application built to enhance collaboration within creative teams. It offers a suite of tools including real-time task boards, file sharing with version control, and integrated team chat. The backend is powered by Node.js and Express, with a Firebase real-time database ensuring seamless data synchronization across all clients. The frontend is built with React and styled using TailwindCSS for a responsive and modern user experience.',
+                        id: 'Proyek Alpha adalah aplikasi full-stack yang dibangun untuk meningkatkan kolaborasi dalam tim kreatif. Ini menawarkan serangkaian alat termasuk papan tugas real-time, berbagi file dengan kontrol versi, dan obrolan tim terintegrasi. Backend didukung oleh Node.js dan Express, dengan database real-time Firebase memastikan sinkronisasi data yang mulus di semua klien. Frontend dibangun dengan React dan ditata menggunakan TailwindCSS untuk pengalaman pengguna yang responsif dan modern.'
+                    },
+                    liveLink: '#',
+                    repoLink: '#'
+                },
+                {
+                    id: 'beta',
+                    title: 'GAIA - AI Powered RPG',
+                    shortDesc: {
+                        en: 'An e-commerce platform with a focus on user experience and performance.',
+                        id: 'Platform e-commerce dengan fokus pada pengalaman pengguna dan kinerja.'
+                    },
+                    tags: ['Vue.js', 'Stripe', 'GraphQL', 'Netlify'],
+                    images: [
+                        'https://placehold.co/800x450/1e40af/ffffff?text=Beta+Homepage',
+                        'https://placehold.co/800x450/1e3a8a/e0f2fe?text=Beta+Product+Page',
+                    ],
+                    description: {
+                        en: 'Project Beta is a modern, headless e-commerce platform designed for speed and scalability. Using Vue.js for the frontend, it provides a highly interactive and fast shopping experience. It integrates with Stripe for secure payments and uses GraphQL for efficient data fetching. The platform is deployed on Netlify for continuous integration and high availability.',
+                        id: 'Proyek Beta adalah platform e-commerce modern tanpa kepala yang dirancang untuk kecepatan dan skalabilitas. Menggunakan Vue.js untuk frontend, ini memberikan pengalaman berbelanja yang sangat interaktif dan cepat. Ini terintegrasi dengan Stripe untuk pembayaran yang aman dan menggunakan GraphQL untuk pengambilan data yang efisien. Platform ini digunakan di Netlify untuk integrasi berkelanjutan dan ketersediaan tinggi.'
+                    },
+                    liveLink: '#',
+                    repoLink: '#'
+                },
+                {
+                    id: 'gamma',
+                    title: 'Project Gamma',
+                    shortDesc: {
+                        en: 'A data visualization dashboard for analyzing complex datasets.',
+                        id: 'Dasbor visualisasi data untuk menganalisis kumpulan data yang kompleks.'
+                    },
+                    tags: ['D3.js', 'Python', 'Flask', 'PostgreSQL'],
+                    images: [
+                        'https://placehold.co/800x450/b91c1c/ffffff?text=Gamma+Dashboard',
+                        'https://placehold.co/800x450/991b1b/fee2e2?text=Gamma+Charts',
+                        'https://placehold.co/800x450/7f1d1d/fecaca?text=Gamma+Analytics'
+                    ],
+                    description: {
+                        en: 'Project Gamma is a powerful data visualization tool that helps users make sense of large and complex datasets. It features interactive charts and graphs built with D3.js. The backend, powered by Python and Flask, processes data and serves it via a REST API from a PostgreSQL database. It enables users to uncover insights through dynamic filtering and drill-down capabilities.',
+                        id: 'Proyek Gamma adalah alat visualisasi data yang kuat yang membantu pengguna memahami kumpulan data yang besar dan kompleks. Ini fitur grafik dan bagan interaktif yang dibangun dengan D3.js. Backend, didukung oleh Python dan Flask, memproses data dan menyajikannya melalui REST API dari database PostgreSQL. Ini memungkinkan pengguna untuk mengungkap wawasan melalui pemfilteran dinamis dan kemampuan drill-down.'
+                    },
+                    liveLink: '#',
+                    repoLink: '#'
+                }
+            ];
+            
+            let currentLanguage = 'en';
+
+            // --- LANGUAGE SWITCHER ---
+            const langSwitcher = document.getElementById('lang-switcher');
+            const langBtn = document.getElementById('lang-btn');
+            const langText = document.getElementById('lang-text');
+            const langMenu = document.getElementById('lang-menu');
+            const langLoader = document.getElementById('lang-loader');
+
+            langBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langMenu.classList.toggle('hidden');
+                langMenu.classList.toggle('opacity-0');
+            });
+
+            document.addEventListener('click', () => {
+                if (!langMenu.classList.contains('hidden')) {
+                    langMenu.classList.add('hidden');
+                    langMenu.classList.add('opacity-0');
+                }
+            });
+
+            const updateContent = (lang) => {
+                currentLanguage = lang;
+                document.querySelectorAll('[data-key]').forEach(element => {
+                    const key = element.getAttribute('data-key');
+                    if (translations[lang] && translations[lang][key]) {
+                        element.innerHTML = translations[lang][key];
+                    }
+                });
+                langText.innerText = lang.toUpperCase();
+                localStorage.setItem('language', lang);
+                populateProjectGrid();
+            };
+
+            const switchLanguage = (lang) => {
+                if (currentLanguage === lang) {
+                    langMenu.classList.add('hidden', 'opacity-0');
+                    return;
+                }
+                langLoader.classList.remove('opacity-0', 'pointer-events-none');
+                langMenu.classList.add('hidden', 'opacity-0');
+
+                setTimeout(() => {
+                    updateContent(lang);
+                    langLoader.classList.add('opacity-0', 'pointer-events-none');
+                }, 500);
+            };
+
+            langMenu.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (e.target.tagName === 'A') {
+                    const lang = e.target.getAttribute('data-lang-option');
+                    switchLanguage(lang);
+                }
+            });
+
+
+            // --- POPULATE PROJECT GRID ---
+            const projectGrid = document.getElementById('project-grid');
+            function populateProjectGrid() {
+                if (projectGrid) {
+                    projectGrid.innerHTML = projects.map(p => `
+                        <div class="card-hover-effect bg-gray-800/50 border border-gray-700 rounded-2xl transform transition-transform duration-300 shadow-lg flex flex-col overflow-hidden">
+                            <div class="aspect-video bg-gray-700">
+                                 <img src="${p.images[0]}" alt="${p.title}" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                 <h3 class="text-2xl font-bold text-white mb-2">${p.title}</h3>
+                                 <p class="text-slate-400 mb-4 flex-grow">${p.shortDesc[currentLanguage]}</p>
+                                 <div class="flex flex-wrap gap-2 mb-6">
+                                    ${p.tags.map(tag => `<span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-1 rounded-full">${tag}</span>`).join('')}
+                                 </div>
+                                 <button data-project-id="${p.id}" class="open-modal-btn mt-auto text-cyan-400 font-semibold hover:text-cyan-300 transition-colors self-start" data-key="card-learn-more">
+                                    ${translations[currentLanguage]['card-learn-more']}
+                                 </button>
+                            </div>
+                        </div>
+                    `).join('');
+                     // Re-attach event listeners to the new buttons
+                    document.querySelectorAll('.open-modal-btn').forEach(btn => {
+                        btn.addEventListener('click', () => openModal(btn.dataset.projectId));
+                    });
+                }
+            }
+
+
+            // --- MODAL LOGIC ---
+            const modal = document.getElementById('project-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+            const modalTags = document.getElementById('modal-tags');
+            const modalImageContainer = document.getElementById('modal-image-container');
+            const modalLiveLink = document.getElementById('modal-live-link');
+            const modalRepoLink = document.getElementById('modal-repo-link');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const prevImageBtn = document.getElementById('prev-image-btn');
+            const nextImageBtn = document.getElementById('next-image-btn');
+            
+            let currentProjectImages = [];
+            let currentImageIndex = 0;
+
+            function updateImage() {
+                modalImageContainer.innerHTML = `<img src="${currentProjectImages[currentImageIndex]}" class="w-full h-full object-contain absolute top-0 left-0 animate-[fadeIn_0.5s]" alt="Project Screenshot">`;
+                prevImageBtn.classList.toggle('hidden', currentProjectImages.length <= 1);
+                nextImageBtn.classList.toggle('hidden', currentProjectImages.length <= 1);
+            }
+
+            prevImageBtn.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex - 1 + currentProjectImages.length) % currentProjectImages.length;
+                updateImage();
+            });
+
+            nextImageBtn.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex + 1) % currentProjectImages.length;
+                updateImage();
+            });
+
+            function openModal(projectId) {
+                const project = projects.find(p => p.id === projectId);
+                if (!project) return;
+                
+                modalTitle.textContent = project.title;
+                modalDescription.textContent = project.description[currentLanguage];
+                modalLiveLink.href = project.liveLink;
+                modalRepoLink.href = project.repoLink;
+
+                modalTags.innerHTML = project.tags.map(tag => `<span class="bg-cyan-500/20 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">${tag}</span>`).join('');
+
+                currentProjectImages = project.images;
+                currentImageIndex = 0;
+                updateImage();
+                
+                modal.classList.remove('invisible', 'opacity-0');
+                modal.querySelector('.modal-content').classList.remove('scale-95');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.add('opacity-0');
+                modal.querySelector('.modal-content').classList.add('scale-95');
+                setTimeout(() => {
+                    modal.classList.add('invisible');
+                    document.body.style.overflow = '';
+                }, 300);
+            }
+
+            document.querySelectorAll('.open-modal-btn').forEach(btn => {
+                btn.addEventListener('click', () => openModal(btn.dataset.projectId));
+            });
+
+            closeModalBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('invisible')) {
+                    closeModal();
+                }
+            });
+
+            // --- DYNAMIC PARTICLE BACKGROUND ---
+            const particlesContainer = document.getElementById('particles-container');
+            if (particlesContainer) {
+                const particleCount = 50;
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    particle.style.left = `${Math.random() * 100}vw`;
+                    particle.style.animationDuration = `${Math.random() * 15 + 10}s`; // 10s to 25s
+                    particle.style.animationDelay = `${Math.random() * 25}s`;
+                    const size = Math.random() * 3 + 1;
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    particlesContainer.appendChild(particle);
+                }
+            }
+            
+            // --- SHOOTING STARS ---
+            const starsContainer = document.getElementById('shooting-stars-container');
+            if(starsContainer) {
+                const createStar = () => {
+                    const star = document.createElement('div');
+                    star.classList.add('shooting-star');
+                    star.style.top = `${Math.random() * 100}%`;
+                    star.style.left = `-${Math.random() * 25}%`;
+                    star.style.animationDelay = `${Math.random() * 5}s`;
+                    starsContainer.appendChild(star);
+                    setTimeout(() => star.remove(), 3000);
+                };
+                setInterval(createStar, 1500);
+            }
+
+
+            // --- FADE-IN ANIMATION ON SCROLL ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-visible');
+                        observer.unobserve(entry.target); // Optional: stop observing once visible
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('fade-in-section');
+                observer.observe(section);
+            });
+            // First section visible by default
+            document.querySelector('#home').classList.add('fade-in-visible');
+
+
+            // --- SMOOTH SCROLL FOR NAVIGATION ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(this.getAttribute('href'));
+                    if(targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // --- NAVBAR HIDE/SHOW ON SCROLL ---
+            let lastScrollY = window.scrollY;
+            const navbar = document.querySelector('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > lastScrollY && window.scrollY > 150) {
+                    // Scrolling down
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scrolling up
+                    navbar.style.transform = 'translateY(0)';
+                }
+                lastScrollY = window.scrollY;
+            });
+
+
+            // --- SCROLL DOTS AND BACK-TO-TOP BUTTON ---
+            const scrollTracker = document.getElementById('scroll-tracker-container');
+            const dotsTrack = document.getElementById('dots-track');
+            const dotLeft = document.getElementById('dot-left');
+            const dotRight = document.getElementById('dot-right');
+            const backToTopBtn = document.getElementById('back-to-top-btn');
+            const contactSection = document.getElementById('contact');
+
+            // Animate dots on scroll
+            window.addEventListener('scroll', () => {
+                const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+                if (scrollableHeight <= 0) return;
+
+                const scrollProgress = window.scrollY / scrollableHeight;
+                // Move dots towards the center, based on the track's width
+                const maxMove = (dotsTrack.clientWidth / 2) - (dotLeft.clientWidth);
+                
+                dotLeft.style.transform = `translateX(${scrollProgress * maxMove}px) translateY(-50%)`;
+                dotRight.style.transform = `translateX(${-scrollProgress * maxMove}px) translateY(-50%)`;
+            });
+
+            // Use IntersectionObserver to toggle button visibility
+            const contactObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        scrollTracker.classList.add('morphed');
+                    } else {
+                        scrollTracker.classList.remove('morphed');
+                    }
+                });
+            }, { threshold: 0.1 }); // Trigger when 10% of the contact section is visible
+
+            if (contactSection) {
+                contactObserver.observe(contactSection);
+            }
+
+            // --- FOOTER INTERACTION FOR SCROLL TRACKER ---
+            const pageFooter = document.getElementById('page-footer');
+            const footerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const footerHeight = pageFooter.offsetHeight;
+                        scrollTracker.style.transform = `translateY(-${footerHeight}px)`;
+                    } else {
+                        scrollTracker.style.transform = 'translateY(0px)';
+                    }
+                });
+            }, { threshold: 0 });
+
+            if (pageFooter) {
+                footerObserver.observe(pageFooter);
+            }
+
+
+            // Handle back to top click
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // --- PRELOADER ---
+            const preloader = document.getElementById('preloader');
+            window.addEventListener('load', () => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500); // match transition duration
+            });
+            
+            // --- INITIALIZE LANGUAGE ---
+            const savedLang = localStorage.getItem('language') || 'en';
+            updateContent(savedLang);
+
+        });
+    </script>
 </body>
 </html>
+
