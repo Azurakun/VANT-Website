@@ -8,249 +8,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #111827; /* Darker, cooler gray */
-            color: #e5e7eb;
-            overflow-x: hidden;
-        }
-        /* Custom scrollbar for a more modern look */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1f2937;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #4b5563;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #6b7280;
-        }
-        /* Refined fade-in animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px) scale(0.98); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        .fade-in-section {
-            opacity: 0; /* Initially hidden */
-        }
-        .fade-in-visible {
-            animation: fadeIn 1s ease-out forwards;
-        }
-        
-        /* Modal styles */
-        .modal {
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-        .modal-content {
-            transition: transform 0.3s ease;
-        }
-
-        /* Animated Background */
-        .background-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Place it behind everything */
-            overflow: hidden;
-        }
-
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(22, 163, 174, 0.15) 0%, rgba(22, 163, 174, 0) 70%);
-            animation: move 25s infinite linear;
-        }
-
-        .circle.alt-color {
-            background: radial-gradient(circle, rgba(225, 29, 72, 0.1) 0%, rgba(225, 29, 72, 0) 70%);
-        }
-
-        .circle:nth-child(1) {
-            width: 30vw; height: 30vw; top: 10%; left: 10%; animation-duration: 25s;
-        }
-        .circle:nth-child(2) {
-            width: 40vw; height: 40vw; bottom: 5%; right: 5%; animation-duration: 30s; animation-delay: -5s;
-        }
-        .circle:nth-child(3) {
-            width: 25vw; height: 25vw; top: 50%; left: 50%; animation-duration: 35s; animation-delay: -10s;
-        }
-        .circle:nth-child(4) {
-             width: 20vw; height: 20vw; top: 20%; right: 15%; animation-duration: 40s; animation-delay: -15s;
-        }
-        .circle:nth-child(5) {
-             width: 35vw; height: 35vw; bottom: 15%; left: 5%; animation-duration: 28s; animation-delay: -20s;
-        }
-
-
-        @keyframes move {
-            0% { transform: translate(0, 0) rotate(0deg) scale(1); }
-            25% { transform: translate(10vw, -15vh) rotate(90deg) scale(1.1); }
-            50% { transform: translate(-15vw, 10vh) rotate(180deg) scale(0.9); }
-            75% { transform: translate(5vw, 15vh) rotate(270deg) scale(1.2); }
-            100% { transform: translate(0, 0) rotate(360deg) scale(1); }
-        }
-
-        /* Particles */
-        #particles-container {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        .particle {
-            position: absolute;
-            bottom: -10px;
-            background-color: rgba(229, 231, 235, 0.2);
-            border-radius: 50%;
-            animation-name: floatUp;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-        }
-
-        @keyframes floatUp {
-            from {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateY(-105vh);
-                opacity: 1;
-            }
-        }
-        
-        /* Shooting Stars */
-        .shooting-star {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            height: 2px;
-            background: linear-gradient(-45deg, rgba(107, 114, 128, 0.8), transparent);
-            border-radius: 999px;
-            filter: drop-shadow(0 0 6px rgba(107, 114, 128, 0.5));
-            animation: tail 3s ease-in-out infinite, shooting 3s ease-in-out infinite;
-        }
-
-        @keyframes tail {
-            0% { width: 0; }
-            30% { width: 100px; }
-            100% { width: 0; }
-        }
-
-        @keyframes shooting {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(400px); }
-        }
-
-
-        /* Section Separator */
-        .section-separator {
-            width: 80%;
-            max-width: 400px;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(75, 85, 99, 0.5), transparent);
-            margin: 0 auto;
-        }
-
-        /* Scroll Tracker and Dots */
-        #scroll-tracker-container.morphed #dot-left,
-        #scroll-tracker-container.morphed #dot-right {
-            opacity: 0;
-            transform: translateY(-50%) scale(0);
-        }
-
-        #scroll-tracker-container #dot-left,
-        #scroll-tracker-container #dot-right {
-            transition: opacity 0.5s ease, transform 0s, left 0s, right 0s;
-        }
-
-        #scroll-tracker-container.morphed #back-to-top-btn {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        #scroll-tracker-container #back-to-top-btn {
-            transform: translate(-50%, -50%) scale(0);
-        }
-
-        #scroll-tracker-container.morphed #dots-track {
-            opacity: 0;
-        }
-        #scroll-tracker-container {
-            transition: transform 0.3s ease-in-out;
-        }
-        
-        /* Enhanced Hover Effect */
-        .card-hover-effect {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card-hover-effect:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 0 25px rgba(22, 163, 174, 0.3), 0 0 10px rgba(22, 163, 174, 0.2);
-        }
-
-        /* Animated Gradient Text for Hero */
-        .animated-gradient-text {
-            background: linear-gradient(90deg, #e5e7eb, #67e8f9, #e5e7eb);
-            background-size: 200% auto;
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: gradient-animation 5s linear infinite;
-        }
-
-        @keyframes gradient-animation {
-            to {
-                background-position: 200% center;
-            }
-        }
-
-        /* Hero Button Glow */
-        .hero-button-glow:hover {
-            box-shadow: 0 0 20px rgba(22, 163, 174, 0.6), 0 0 10px rgba(22, 163, 174, 0.4);
-        }
-        
-        /* New Hero Background Animations */
-        #hero-radial-bg {
-            animation: pulse-gradient 10s infinite ease-in-out;
-        }
-
-        #hero-grid-bg {
-            animation: move-grid 60s linear infinite alternate;
-        }
-
-        @keyframes pulse-gradient {
-            0% { transform: scale(0.9); opacity: 0.8; }
-            50% { transform: scale(1.2); opacity: 1; }
-            100% { transform: scale(0.9); opacity: 0.8; }
-        }
-
-        @keyframes move-grid {
-            from { background-position: 0 0; }
-            to { background-position: -56px -96px; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="antialiased">
 
-    <!-- Preloader -->
     <div id="preloader" class="fixed inset-0 z-[100] bg-[#111827] flex items-center justify-center transition-opacity duration-500 ease-in-out">
         <h1 class="text-4xl font-black text-white uppercase tracking-tighter animate-pulse">VANT</h1>
     </div>
 
-    <!-- Language Switcher Loader -->
     <div id="lang-loader" class="fixed inset-0 z-[101] bg-[#111827]/80 backdrop-blur-sm flex items-center justify-center transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none">
         <div class="w-16 h-16 border-4 border-cyan-400 border-t-transparent rounded-full animate-spin"></div>
     </div>
 
-    <!-- Animated Background -->
     <div class="background-animation">
         <div class="circle"></div>
         <div class="circle"></div>
@@ -261,7 +30,6 @@
         <div id="shooting-stars-container"></div>
     </div>
 
-    <!-- Navigation Bar -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/50 backdrop-blur-md border-b border-gray-700 transition-transform duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -277,7 +45,6 @@
                         <a href="#developer" data-key="nav-developer" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">The Developer</a>
                         <a href="#contact" data-key="nav-contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
                     </div>
-                    <!-- Language Dropdown -->
                     <div class="relative ml-4" id="lang-switcher">
                         <button id="lang-btn" type="button" class="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                             <span id="lang-text" class="font-bold">EN</span>
@@ -293,11 +60,8 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main>
-        <!-- Section 1: Hero / Home -->
         <section id="home" class="h-screen w-screen flex items-center justify-center relative overflow-hidden">
-            <!-- Background Gradient -->
             <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-900 via-gray-900 to-black"></div>
             <div id="hero-grid-bg" class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
             <div id="hero-radial-bg" class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_rgba(22,_163,_74,_0.1),_transparent_40%)]"></div>
@@ -313,8 +77,7 @@
                     Explore Our Vision
                 </a>
             </div>
-             <!-- Scroll down indicator -->
-            <div class="absolute bottom-10 inset-x-0 flex flex-col items-center space-y-2 animate-bounce">
+             <div class="absolute bottom-10 inset-x-0 flex flex-col items-center space-y-2 animate-bounce">
                 <span class="text-sm text-gray-400" data-key="scroll-down">Scroll Down</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -322,7 +85,6 @@
             </div>
         </section>
 
-        <!-- Section 2: About VANT & Mission -->
         <section id="about" class="min-h-screen w-screen flex items-center justify-center bg-transparent py-20 px-4 sm:px-6 lg:px-8">
             <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 <div class="text-left">
@@ -359,8 +121,7 @@
         </section>
 
         <div class="section-separator"></div>
-        
-        <!-- Section 3: About Vibra -->
+
         <section id="vibra" class="min-h-screen w-screen flex items-center justify-center bg-transparent py-20 px-4 sm:px-6 lg:px-8">
             <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                  <div class="relative w-full h-full min-h-[400px]">
@@ -379,10 +140,9 @@
                 </div>
             </div>
         </section>
-        
+
         <div class="section-separator"></div>
 
-        <!-- Section 4: About AnTiMa -->
         <section id="antima" class="min-h-screen w-screen flex items-center justify-center bg-transparent py-20 px-4 sm:px-6 lg:px-8">
             <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 <div class="text-left md:order-2">
@@ -406,7 +166,6 @@
 
         <div class="section-separator"></div>
 
-        <!-- Section 5: Featured Project -->
         <section id="featured" class="w-screen bg-transparent py-20 px-4 sm:px-6 lg:px-8">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-12">
@@ -434,10 +193,9 @@
                 </div>
             </div>
         </section>
-        
+
         <div class="section-separator"></div>
 
-        <!-- Section 6: Projects -->
         <section id="projects" class="min-h-screen w-screen flex flex-col items-center justify-center bg-transparent py-20 px-4 sm:px-6 lg:px-8">
             <div class="max-w-6xl mx-auto text-center">
                 <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4" data-key="projects-title">Our Creations</h2>
@@ -446,13 +204,11 @@
                 </p>
             </div>
             <div id="project-grid" class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 w-full px-4">
-                <!-- Project cards will be injected here by JavaScript -->
-            </div>
+                </div>
         </section>
 
         <div class="section-separator"></div>
 
-        <!-- Section 7: About the Developer -->
         <section id="developer" class="h-screen w-screen flex items-center justify-center bg-transparent py-20 px-4 sm:px-6 lg:px-8">
             <div class="max-w-5xl mx-auto text-center">
                 <div>
@@ -471,7 +227,6 @@
             </div>
         </section>
 
-        <!-- Section 8: Contact Footer -->
         <section id="contact" class="min-h-[50vh] w-screen flex items-center justify-center bg-transparent py-20 px-4 sm:px-6 lg:px-8 border-t border-gray-700">
              <div class="text-center">
                 <h2 class="text-4xl font-bold text-white tracking-tight mb-4" data-key="contact-title">Get In Touch</h2>
@@ -484,17 +239,15 @@
              </div>
         </section>
     </main>
-    
+
     <footer id="page-footer" class="bg-black py-4 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
             <p data-key="footer-text">&copy; 2025 VANT Project. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- Project Modal -->
     <div id="project-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 invisible opacity-0">
         <div class="modal-content bg-gray-900 border border-gray-700 w-full max-w-4xl max-h-[90vh] rounded-2xl shadow-2xl shadow-black/50 overflow-hidden flex flex-col transform scale-95">
-            <!-- Modal Header -->
             <div class="flex items-center justify-between p-4 border-b border-gray-700 flex-shrink-0">
                 <h3 id="modal-title" class="text-2xl font-bold text-white"></h3>
                 <button id="close-modal-btn" class="text-gray-400 hover:text-white transition-colors">
@@ -503,13 +256,10 @@
                     </svg>
                 </button>
             </div>
-            <!-- Modal Body -->
             <div class="p-6 overflow-y-auto">
-                <!-- Image Showcase -->
                 <div class="relative mb-6">
                     <div id="modal-image-container" class="aspect-video bg-gray-800 rounded-lg overflow-hidden relative">
-                         <!-- Images will be injected here -->
-                    </div>
+                         </div>
                     <button id="prev-image-btn" class="absolute top-1/2 left-2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/80 transition-colors">
                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
                     </button>
@@ -518,7 +268,6 @@
                     </button>
                 </div>
 
-                <!-- Tags and Description -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="md:col-span-2">
                         <h4 class="text-xl font-bold text-white mb-2" data-key="modal-about-title">About this project</h4>
@@ -546,520 +295,18 @@
         </div>
     </div>
 
-    <!-- Scroll Progress Indicator -->
     <div id="scroll-tracker-container" class="fixed bottom-4 left-0 right-0 w-full h-16 z-40 pointer-events-none flex items-center justify-center">
         <div class="relative w-full max-w-xs h-10 flex items-center justify-center">
-            <!-- The track that dots move in -->
             <div id="dots-track" class="absolute top-1/2 left-0 w-full h-2 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-full transition-opacity duration-500">
                 <div id="dot-left" class="absolute top-1/2 w-3 h-3 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(22,163,174,0.8)]" style="left: 0px; transform: translateY(-50%)"></div>
                 <div id="dot-right" class="absolute top-1/2 w-3 h-3 bg-rose-400 rounded-full shadow-[0_0_10px_rgba(225,29,72,0.8)]" style="right: 0px; transform: translateY(-50%)"></div>
             </div>
-            <!-- The button that appears -->
             <button id="back-to-top-btn" class="absolute top-1/2 left-1/2 opacity-0 pointer-events-none transition-all duration-300 bg-gray-800/50 border border-gray-700 rounded-full text-gray-300 hover:text-white px-4 py-2 text-sm font-semibold whitespace-nowrap">
                 <span data-key="back-to-top">Back to Top</span>
             </button>
         </div>
     </div>
 
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-
-            // --- TRANSLATIONS ---
-            const translations = {
-                en: {
-                    'nav-about': 'About VANT',
-                    'nav-vibra': 'Vibra',
-                    'nav-antima': 'AnTiMa',
-                    'nav-projects': 'Projects',
-                    'nav-developer': 'The Developer',
-                    'nav-contact': 'Contact',
-                    'hero-title': 'VANT Project',
-                    'hero-subtitle': 'A fusion of Vibra & AnTiMa, pioneering the future through innovative solutions and creative endeavors.',
-                    'hero-button': 'Explore Our Vision',
-                    'scroll-down': 'Scroll Down',
-                    'about-title': 'Our Mission: Learning, Made Fun.',
-                    'about-subtitle': 'VANT Project is for those who want to learn languages in a fun and engaging way, especially through the world of Anime, Comics, and Games (ACG).',
-                    'about-desc': 'We believe that learning shouldn\'t be a chore. Our core mission is to break down the barriers of traditional education by creating immersive and enjoyable experiences. We aim to prove that acquiring new skills, like mastering a language, can be as exciting as exploring your favorite fictional universe.',
-                    'about-button': 'See Our Work →',
-                    'mission-fun-title': 'Fun',
-                    'mission-fun-desc': 'We prioritize enjoyment and engagement in all our learning tools.',
-                    'mission-access-title': 'Accessibility',
-                    'mission-access-desc': 'Our goal is to make language learning easy to start and hassle-free.',
-                    'mission-tech-title': 'Technology',
-                    'mission-tech-desc': 'We leverage smart AI and modern tech to create effective learning experiences.',
-                    'mission-comm-title': 'Community',
-                    'mission-comm-desc': 'We are building a space for ACG fans to connect and learn together.',
-                    'vibra-title': 'The Vibra Initiative',
-                    'vibra-subtitle': 'Simplifying Experiences, Amplifying Fun.',
-                    'vibra-desc1': 'The Vibra Project, also known as Vibra Store, was founded in 2023 with a clear vision: to "Simplify" how people play games. We started by offering game jockey services, making it easier for players to achieve their in-game goals without the grind.',
-                    'vibra-desc2': 'This philosophy of simplification is the core of Vibra\'s contribution to the VANT Project. Just as we remove the hassle from gaming, we apply the same principle to language learning. Vibra\'s role is to ensure our platforms are intuitive, user-friendly, and free of unnecessary complexity. By creating a smooth and seamless user experience, we let learners focus on what truly matters: enjoying the process of discovery and mastering a new language through their favorite anime and manga.',
-                    'antima-title': 'The AnTiMa Framework',
-                    'antima-subtitle': 'Where Anime, Language, and Technology Collide.',
-                    'antima-desc1': 'AnTiMa, short for Anime Translation Manga, is the heart of our creative and technical efforts. It\'s an initiative dedicated to blending the captivating world of anime with language learning and cutting-edge technology.',
-                    'antima-desc2': 'Our mission with AnTiMa is to make cultural discovery and language acquisition fun. By developing anime-inspired tools and intelligent AI features, we\'re creating a new way to learn. AnTiMa is our first major step towards realizing our vision, and it\'s a project that continues to evolve and grow.',
-                    'featured-title': 'Featured Project',
-                    'featured-subtitle': 'A glimpse into our flagship creation, embodying our commitment to excellence and innovation.',
-                    'featured-desc': 'Our first project is AnTiMa, an AI-powered assistant for Discord. It\'s designed to help users learn languages in a fun, interactive way within their communities. It features translation tools, cultural trivia, and personalized learning prompts, all inspired by anime and manga culture.',
-                    'featured-button': 'View Details',
-                    'projects-title': 'Our Creations',
-                    'projects-subtitle': 'Here are some of the projects we\'re proud to have built. Each one is a testament to our passion for technology and design.',
-                    'card-learn-more': 'Learn More →',
-                    'dev-name': 'Achmad Arditio Sumartono',
-                    'dev-title': 'Lead Developer & AI Enthusiast',
-                    'dev-bio': "I Am a passionate AI developer and prompt engineer with a knack for creating innovative solutions. I specialize in building AI-powered applications that enhance user experiences. My journey began with a fascination for how machines can learn and adapt, leading me to explore various AI frameworks and tools. When I'm not coding, you'll find me exploring the latest tech trends or indulging in my love for anime and gaming.",
-                    'contact-title': 'Get In Touch',
-                    'contact-subtitle': 'Have a question or want to collaborate? I\'d love to hear from you.',
-                    'contact-button': 'Contact Me',
-                    'footer-text': '© 2025 VANT Project. All Rights Reserved.',
-                    'modal-about-title': 'About this project',
-                    'modal-tech-title': 'Technologies Used',
-                    'modal-links-title': 'Links',
-                    'modal-live-link': 'Live Preview',
-                    'modal-repo-link': 'Code Repository',
-                    'back-to-top': 'Back to Top'
-                },
-                id: {
-                    'nav-about': 'Tentang VANT',
-                    'nav-vibra': 'Vibra',
-                    'nav-antima': 'AnTiMa',
-                    'nav-projects': 'Proyek',
-                    'nav-developer': 'Pengembang',
-                    'nav-contact': 'Kontak',
-                    'hero-title': 'Proyek VANT',
-                    'hero-subtitle': 'Sebuah perpaduan Vibra & AnTiMa, merintis masa depan melalui solusi inovatif dan usaha kreatif.',
-                    'hero-button': 'Jelajahi Visi Kami',
-                    'scroll-down': 'Gulir ke Bawah',
-                    'about-title': 'Misi Kami: Belajar, Dibuat Menyenangkan.',
-                    'about-subtitle': 'Proyek VANT ditujukan bagi mereka yang ingin belajar bahasa dengan cara yang menyenangkan dan menarik, terutama melalui dunia Anime, Komik, dan Game (ACG).',
-                    'about-desc': 'Kami percaya bahwa belajar tidak seharusnya menjadi beban. Misi utama kami adalah mendobrak penghalang pendidikan tradisional dengan menciptakan pengalaman yang imersif dan menyenangkan. Kami bertujuan untuk membuktikan bahwa memperoleh keterampilan baru, seperti menguasai bahasa, bisa sama menyenangkannya dengan menjelajahi alam semesta fiksi favorit Anda.',
-                    'about-button': 'Lihat Karya Kami →',
-                    'mission-fun-title': 'Menyenangkan',
-                    'mission-fun-desc': 'Kami memprioritaskan kenikmatan dan keterlibatan dalam semua alat belajar kami.',
-                    'mission-access-title': 'Aksesibilitas',
-                    'mission-access-desc': 'Tujuan kami adalah membuat pembelajaran bahasa mudah untuk dimulai dan tanpa repot.',
-                    'mission-tech-title': 'Teknologi',
-                    'mission-tech-desc': 'Kami memanfaatkan AI cerdas dan teknologi modern untuk menciptakan pengalaman belajar yang efektif.',
-                    'mission-comm-title': 'Komunitas',
-                    'mission-comm-desc': 'Kami membangun ruang bagi para penggemar ACG untuk terhubung dan belajar bersama.',
-                    'vibra-title': 'Inisiatif Vibra',
-                    'vibra-subtitle': 'Menyederhanakan Pengalaman, Melipatgandakan Kesenangan.',
-                    'vibra-desc1': 'Proyek Vibra, juga dikenal sebagai Vibra Store, didirikan pada tahun 2023 dengan visi yang jelas: untuk "Menyederhanakan" cara orang bermain game. Kami memulai dengan menawarkan layanan joki game, sehingga memudahkan pemain untuk mencapai tujuan dalam game mereka tanpa harus bersusah payah.',
-                    'vibra-desc2': 'Filosofi penyederhanaan ini adalah inti dari kontribusi Vibra pada Proyek VANT. Sama seperti kami menghilangkan kerumitan dari bermain game, kami menerapkan prinsip yang sama pada pembelajaran bahasa. Peran Vibra adalah memastikan platform kami intuitif, ramah pengguna, dan bebas dari kerumitan yang tidak perlu. Dengan menciptakan pengalaman pengguna yang lancar dan mulus, kami membiarkan pelajar fokus pada hal yang benar-benar penting: menikmati proses penemuan dan menguasai bahasa baru melalui anime dan manga favorit mereka.',
-                    'antima-title': 'Kerangka Kerja AnTiMa',
-                    'antima-subtitle': 'Tempat Bertemunya Anime, Bahasa, dan Teknologi.',
-                    'antima-desc1': 'AnTiMa, singkatan dari Anime Translation Manga, adalah jantung dari upaya kreatif dan teknis kami. Ini adalah sebuah inisiatif yang didedikasikan untuk memadukan dunia anime yang menawan dengan pembelajaran bahasa dan teknologi mutakhir.',
-                    'antima-desc2': 'Misi kami dengan AnTiMa adalah membuat penemuan budaya dan penguasaan bahasa menjadi menyenangkan. Dengan mengembangkan alat yang terinspirasi dari anime dan fitur AI yang cerdas, kami menciptakan cara baru untuk belajar. AnTiMa adalah langkah besar pertama kami untuk mewujudkan visi kami, dan ini adalah proyek yang terus berkembang dan bertumbuh.',
-                    'featured-title': 'Proyek Unggulan',
-                    'featured-subtitle': 'Sekilas tentang ciptaan andalan kami, yang mewujudkan komitmen kami terhadap keunggulan dan inovasi.',
-                    'featured-desc': 'Proyek pertama kami adalah AnTiMa, asisten bertenaga AI untuk Discord. Ini dirancang untuk membantu pengguna belajar bahasa dengan cara yang menyenangkan dan interaktif di dalam komunitas mereka. Ini fitur alat terjemahan, trivia budaya, dan petunjuk belajar yang dipersonalisasi, semuanya terinspirasi oleh budaya anime dan manga.',
-                    'featured-button': 'Lihat Detail',
-                    'projects-title': 'Karya Kami',
-                    'projects-subtitle': 'Berikut adalah beberapa proyek yang kami banggakan. Masing-masing adalah bukti semangat kami untuk teknologi dan desain.',
-                    'card-learn-more': 'Selengkapnya →',
-                    'dev-name': 'Achmad Arditio Sumartono',
-                    'dev-title': 'Pengembang Utama & AI Enthusiast',
-                    'dev-bio': "Saya adalah seorang AI Developer dan Prompt Engineer yang bersemangat, dengan keahlian dalam menciptakan solusi inovatif. Saya spesialis dalam mengembangkan aplikasi yang didukung AI untuk meningkatkan pengalaman pengguna. Perjalanan saya dimulai dengan ketertarikan pada cara mesin belajar dan beradaptasi, yang mendorong saya untuk menjelajahi berbagai kerangka kerja dan alat AI. Saat tidak sedang mengoding, Anda akan menemukan saya menjelajahi tren teknologi terbaru atau menikmati hobi saya dalam anime dan gaming.",
-                    'contact-title': 'Hubungi Kami',
-                    'contact-subtitle': 'Punya pertanyaan atau ingin berkolaborasi? Saya ingin sekali mendengar dari Anda.',
-                    'contact-button': 'Hubungi Saya',
-                    'footer-text': '© 2025 Proyek VANT. Hak Cipta Dilindungi Undang-Undang.',
-                    'modal-about-title': 'Tentang proyek ini',
-                    'modal-tech-title': 'Teknologi yang Digunakan',
-                    'modal-links-title': 'Tautan',
-                    'modal-live-link': 'Pratinjau Langsung',
-                    'modal-repo-link': 'Repositori Kode',
-                    'back-to-top': 'Kembali ke Atas'
-                }
-            };
-
-            // --- DATA FOR PROJECTS ---
-            const allProjects = [
-                {
-                    id: 'antima',
-                    title: 'Discord AI Assistant - AnTiMa',
-                    shortDesc: {
-                        en: 'An AI-powered assistant for Discord to help users learn languages in a fun, interactive way.',
-                        id: 'Asisten bertenaga AI untuk Discord untuk membantu pengguna belajar bahasa dengan cara yang menyenangkan dan interaktif.'
-                    },
-                    tags: ['Python', 'MongoDB', 'Google Gemini'],
-                    images: [
-                        'img/WEB.png',
-                        'img/antimabot_1.png',
-                        'img/antimabot_2.png',
-                        'img/antimabot_3.png'
-                    ],
-                    description: {
-                        en: 'Our flagship project, AnTiMa, is an AI-powered assistant built for Discord. It\'s meticulously designed to help users learn languages interactively within their own communities. The bot integrates powerful features like real-time translation, cultural trivia, and personalized learning prompts, all themed around anime and manga culture to create a uniquely engaging and effective learning environment.',
-                        id: 'Proyek andalan kami, AnTiMa, adalah asisten bertenaga AI yang dibuat untuk Discord. Ini dirancang dengan cermat untuk membantu pengguna belajar bahasa secara interaktif di dalam komunitas mereka sendiri. Bot ini mengintegrasikan fitur-fitur canggih seperti terjemahan real-time, trivia budaya, dan petunjuk belajar yang dipersonalisasi, semuanya bertema budaya anime dan manga untuk menciptakan lingkungan belajar yang unik, menarik, dan efektif.'
-                    },
-                    liveLink: 'https://discord.gg/bcYPyAzhRt',
-                    repoLink: 'https://github.com/Azurakun/AnTiMa'
-                },
-                {
-                    id: 'teaflow',
-                    title: 'TeaFlow - Learn With AI',
-                    shortDesc: {
-                        en: '[Work in Progress] Learn languages interactively with an advanced AI tutor featuring TTS and STT.',
-                        id: '[Dalam Pengembangan] Belajar bahasa secara interaktif dengan tutor AI canggih yang dilengkapi TTS dan STT.'
-                    },
-                    tags: ['Python', 'Tailwind', 'JS', 'MongoDB', 'ElevenLabs', 'Google Gemini'],
-                    images: [
-                        'img/TeaF_1.png',
-                        'img/TeaF_3.png',
-                        'img/TeaF_4.png'
-                    ],
-                    description: {
-                        en: 'Learn Languages Interactively with TeaFlow! This innovative platform leverages the advanced premium models of Google\'s Gemini 2.5 Pro, combined with realistic voice synthesis from ElevenLabs, to create a truly interactive and immersive learning experience. Practice your conversational skills with full support for both Text-To-Speech (TTS) and Speech-To-Text (STT), making language acquisition feel natural and engaging.',
-                        id: 'Belajar Bahasa Secara Interaktif dengan TeaFlow! Platform inovatif ini memanfaatkan model premium canggih dari Gemini 2.5 Pro Google, dikombinasikan dengan sintesis suara realistis dari ElevenLabs, untuk menciptakan pengalaman belajar yang benar-benar interaktif dan imersif. Latih keterampilan percakapan Anda dengan dukungan penuh untuk Text-To-Speech (TTS) dan Speech-To-Text (STT), membuat penguasaan bahasa terasa alami dan menarik.'
-                    },
-                    liveLink: '#',
-                    repoLink: 'https://github.com/Azurakun/TeaFlow-AnTiMa'
-                },
-                {
-                    id: 'gaia',
-                    title: 'GAIA - AI Powered RPG',
-                    shortDesc: {
-                        en: 'Turn your imagination into interactive stories with an AI-powered text-based RPG engine.',
-                        id: 'Ubah imajinasi Anda menjadi cerita interaktif dengan mesin RPG berbasis teks bertenaga AI.'
-                    },
-                    tags: ['Python', 'CSS', 'JS', 'MongoDB', 'Google Gemini'],
-                    images: [
-                        'img/gaia_thmb.png',
-                        'img/gaia_1.png',
-                        'img/gaia_4.png',
-                        'img/gaia_2.png',
-                        'img/gaia_3.png',
-                    ],
-                    description: {
-                        en: 'Unleash your creativity with GAIA, an AI-powered text-based Role Playing Game engine. GAIA transforms your imagination into dynamic, interactive stories where your choices truly matter. Powered by Google\'s Gemini, it generates rich narratives, complex characters, and branching storylines in real-time, offering a unique adventure every time you play.',
-                        id: 'Bebaskan kreativitas Anda dengan GAIA, mesin Role Playing Game berbasis teks yang ditenagai AI. GAIA mengubah imajinasi Anda menjadi cerita yang dinamis dan interaktif di mana pilihan Anda benar-benar berarti. Didukung oleh Gemini Google, ia menghasilkan narasi yang kaya, karakter yang kompleks, dan alur cerita yang bercabang secara real-time, menawarkan petualangan unik setiap kali Anda bermain.'
-                    },
-                    liveLink: '#',
-                    repoLink: 'https://github.com/Azurakun/GAIA-RPG'
-                }
-            ];
-            
-            let currentLanguage = 'en';
-
-            // --- LANGUAGE SWITCHER ---
-            const langSwitcher = document.getElementById('lang-switcher');
-            const langBtn = document.getElementById('lang-btn');
-            const langText = document.getElementById('lang-text');
-            const langMenu = document.getElementById('lang-menu');
-            const langLoader = document.getElementById('lang-loader');
-
-            langBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                langMenu.classList.toggle('hidden');
-                langMenu.classList.toggle('opacity-0');
-            });
-
-            document.addEventListener('click', () => {
-                if (!langMenu.classList.contains('hidden')) {
-                    langMenu.classList.add('hidden');
-                    langMenu.classList.add('opacity-0');
-                }
-            });
-
-            const updateContent = (lang) => {
-                currentLanguage = lang;
-                document.querySelectorAll('[data-key]').forEach(element => {
-                    const key = element.getAttribute('data-key');
-                    if (translations[lang] && translations[lang][key]) {
-                        element.innerHTML = translations[lang][key];
-                    }
-                });
-                langText.innerText = lang.toUpperCase();
-                localStorage.setItem('language', lang);
-                populateProjectGrid();
-            };
-
-            const switchLanguage = (lang) => {
-                if (currentLanguage === lang) {
-                    langMenu.classList.add('hidden', 'opacity-0');
-                    return;
-                }
-                langLoader.classList.remove('opacity-0', 'pointer-events-none');
-                langMenu.classList.add('hidden', 'opacity-0');
-
-                setTimeout(() => {
-                    updateContent(lang);
-                    langLoader.classList.add('opacity-0', 'pointer-events-none');
-                }, 500);
-            };
-
-            langMenu.addEventListener('click', (e) => {
-                e.preventDefault();
-                if (e.target.tagName === 'A') {
-                    const lang = e.target.getAttribute('data-lang-option');
-                    switchLanguage(lang);
-                }
-            });
-
-
-            // --- POPULATE PROJECT GRID ---
-            const projectGrid = document.getElementById('project-grid');
-            function populateProjectGrid() {
-                if (projectGrid) {
-                    const gridProjects = allProjects.filter(p => p.id !== 'antima'); // Exclude the featured project from the main grid
-                    projectGrid.innerHTML = gridProjects.map(p => `
-                        <div class="card-hover-effect bg-gray-800/50 border border-gray-700 rounded-2xl transform transition-transform duration-300 shadow-lg flex flex-col overflow-hidden">
-                            <div class="aspect-video bg-gray-700">
-                                 <img src="${p.images[0]}" alt="${p.title}" class="w-full h-full object-cover">
-                            </div>
-                            <div class="p-6 flex flex-col flex-grow">
-                                 <h3 class="text-2xl font-bold text-white mb-2">${p.title}</h3>
-                                 <p class="text-slate-400 mb-4 flex-grow">${p.shortDesc[currentLanguage]}</p>
-                                 <div class="flex flex-wrap gap-2 mb-6">
-                                    ${p.tags.map(tag => `<span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-1 rounded-full">${tag}</span>`).join('')}
-                                 </div>
-                                 <button data-project-id="${p.id}" class="open-modal-btn mt-auto text-cyan-400 font-semibold hover:text-cyan-300 transition-colors self-start" data-key="card-learn-more">
-                                    ${translations[currentLanguage]['card-learn-more']}
-                                 </button>
-                            </div>
-                        </div>
-                    `).join('');
-                     // Re-attach event listeners to the new buttons
-                    document.querySelectorAll('.open-modal-btn').forEach(btn => {
-                        btn.addEventListener('click', () => openModal(btn.dataset.projectId));
-                    });
-                }
-            }
-
-
-            // --- MODAL LOGIC ---
-            const modal = document.getElementById('project-modal');
-            const modalTitle = document.getElementById('modal-title');
-            const modalDescription = document.getElementById('modal-description');
-            const modalTags = document.getElementById('modal-tags');
-            const modalImageContainer = document.getElementById('modal-image-container');
-            const modalLiveLink = document.getElementById('modal-live-link');
-            const modalRepoLink = document.getElementById('modal-repo-link');
-            const closeModalBtn = document.getElementById('close-modal-btn');
-            const prevImageBtn = document.getElementById('prev-image-btn');
-            const nextImageBtn = document.getElementById('next-image-btn');
-            
-            let currentProjectImages = [];
-            let currentImageIndex = 0;
-
-            function updateImage() {
-                modalImageContainer.innerHTML = `<img src="${currentProjectImages[currentImageIndex]}" class="w-full h-full object-contain absolute top-0 left-0 animate-[fadeIn_0.5s]" alt="Project Screenshot">`;
-                prevImageBtn.classList.toggle('hidden', currentProjectImages.length <= 1);
-                nextImageBtn.classList.toggle('hidden', currentProjectImages.length <= 1);
-            }
-
-            prevImageBtn.addEventListener('click', () => {
-                currentImageIndex = (currentImageIndex - 1 + currentProjectImages.length) % currentProjectImages.length;
-                updateImage();
-            });
-
-            nextImageBtn.addEventListener('click', () => {
-                currentImageIndex = (currentImageIndex + 1) % currentProjectImages.length;
-                updateImage();
-            });
-
-            function openModal(projectId) {
-                const project = allProjects.find(p => p.id === projectId);
-                if (!project) return;
-                
-                modalTitle.textContent = project.title;
-                modalDescription.textContent = project.description[currentLanguage];
-                modalLiveLink.href = project.liveLink;
-                modalRepoLink.href = project.repoLink;
-
-                modalTags.innerHTML = project.tags.map(tag => `<span class="bg-cyan-500/20 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">${tag}</span>`).join('');
-
-                currentProjectImages = project.images;
-                currentImageIndex = 0;
-                updateImage();
-                
-                modal.classList.remove('invisible', 'opacity-0');
-                modal.querySelector('.modal-content').classList.remove('scale-95');
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeModal() {
-                modal.classList.add('opacity-0');
-                modal.querySelector('.modal-content').classList.add('scale-95');
-                setTimeout(() => {
-                    modal.classList.add('invisible');
-                    document.body.style.overflow = '';
-                }, 300);
-            }
-
-            document.querySelectorAll('.open-modal-btn').forEach(btn => {
-                btn.addEventListener('click', () => openModal(btn.dataset.projectId));
-            });
-
-            closeModalBtn.addEventListener('click', closeModal);
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    closeModal();
-                }
-            });
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && !modal.classList.contains('invisible')) {
-                    closeModal();
-                }
-            });
-
-            // --- DYNAMIC PARTICLE BACKGROUND ---
-            const particlesContainer = document.getElementById('particles-container');
-            if (particlesContainer) {
-                const particleCount = 50;
-                for (let i = 0; i < particleCount; i++) {
-                    const particle = document.createElement('div');
-                    particle.classList.add('particle');
-                    particle.style.left = `${Math.random() * 100}vw`;
-                    particle.style.animationDuration = `${Math.random() * 15 + 10}s`; // 10s to 25s
-                    particle.style.animationDelay = `${Math.random() * 25}s`;
-                    const size = Math.random() * 3 + 1;
-                    particle.style.width = `${size}px`;
-                    particle.style.height = `${size}px`;
-                    particlesContainer.appendChild(particle);
-                }
-            }
-            
-            // --- SHOOTING STARS ---
-            const starsContainer = document.getElementById('shooting-stars-container');
-            if(starsContainer) {
-                const createStar = () => {
-                    const star = document.createElement('div');
-                    star.classList.add('shooting-star');
-                    star.style.top = `${Math.random() * 100}%`;
-                    star.style.left = `-${Math.random() * 25}%`;
-                    star.style.animationDelay = `${Math.random() * 5}s`;
-                    starsContainer.appendChild(star);
-                    setTimeout(() => star.remove(), 3000);
-                };
-                setInterval(createStar, 1500);
-            }
-
-
-            // --- FADE-IN ANIMATION ON SCROLL ---
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in-visible');
-                        observer.unobserve(entry.target); // Optional: stop observing once visible
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('section').forEach(section => {
-                section.classList.add('fade-in-section');
-                observer.observe(section);
-            });
-            // First section visible by default
-            document.querySelector('#home').classList.add('fade-in-visible');
-
-
-            // --- SMOOTH SCROLL FOR NAVIGATION ---
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetElement = document.querySelector(this.getAttribute('href'));
-                    if(targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-
-            // --- NAVBAR HIDE/SHOW ON SCROLL ---
-            let lastScrollY = window.scrollY;
-            const navbar = document.querySelector('nav');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > lastScrollY && window.scrollY > 150) {
-                    // Scrolling down
-                    navbar.style.transform = 'translateY(-100%)';
-                } else {
-                    // Scrolling up
-                    navbar.style.transform = 'translateY(0)';
-                }
-                lastScrollY = window.scrollY;
-            });
-
-
-            // --- SCROLL DOTS AND BACK-TO-TOP BUTTON ---
-            const scrollTracker = document.getElementById('scroll-tracker-container');
-            const dotsTrack = document.getElementById('dots-track');
-            const dotLeft = document.getElementById('dot-left');
-            const dotRight = document.getElementById('dot-right');
-            const backToTopBtn = document.getElementById('back-to-top-btn');
-            const contactSection = document.getElementById('contact');
-
-            // Animate dots on scroll
-            window.addEventListener('scroll', () => {
-                const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-                if (scrollableHeight <= 0) return;
-
-                const scrollProgress = window.scrollY / scrollableHeight;
-                // Move dots towards the center, based on the track's width
-                const maxMove = (dotsTrack.clientWidth / 2) - (dotLeft.clientWidth);
-                
-                dotLeft.style.transform = `translateX(${scrollProgress * maxMove}px) translateY(-50%)`;
-                dotRight.style.transform = `translateX(${-scrollProgress * maxMove}px) translateY(-50%)`;
-            });
-
-            // Use IntersectionObserver to toggle button visibility
-            const contactObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        scrollTracker.classList.add('morphed');
-                    } else {
-                        scrollTracker.classList.remove('morphed');
-                    }
-                });
-            }, { threshold: 0.1 }); // Trigger when 10% of the contact section is visible
-
-            if (contactSection) {
-                contactObserver.observe(contactSection);
-            }
-
-            // --- FOOTER INTERACTION FOR SCROLL TRACKER ---
-            const pageFooter = document.getElementById('page-footer');
-            const footerObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const footerHeight = pageFooter.offsetHeight;
-                        scrollTracker.style.transform = `translateY(-${footerHeight}px)`;
-                    } else {
-                        scrollTracker.style.transform = 'translateY(0px)';
-                    }
-                });
-            }, { threshold: 0 });
-
-            if (pageFooter) {
-                footerObserver.observe(pageFooter);
-            }
-
-
-            // Handle back to top click
-            backToTopBtn.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-            
-            // --- PRELOADER ---
-            const preloader = document.getElementById('preloader');
-            window.addEventListener('load', () => {
-                preloader.style.opacity = '0';
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 500); // match transition duration
-            });
-            
-            // --- INITIALIZE LANGUAGE ---
-            const savedLang = localStorage.getItem('language') || 'en';
-            updateContent(savedLang);
-
-        });
-    </script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
-
