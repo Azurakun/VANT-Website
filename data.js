@@ -158,11 +158,11 @@ export const allProjects = [
         },
         tags: ['Python', 'CSS', 'JS', 'MongoDB', 'Google Gemini'],
         images: [
-            'img/gaia_thmb.png',
-            'img/gaia_1.png',
-            'img/gaia_4.png',
-            'img/gaia_2.png',
-            'img/gaia_3.png',
+            'img/GAIA_thmb.png',
+            'img/GAIA_1.png',
+            'img/GAIA_4.png',
+            'img/GAIA_2.png',
+            'img/GAIA_3.png',
         ],
         description: {
             en: 'Unleash your creativity with GAIA, an AI-powered text-based Role Playing Game engine. GAIA transforms your imagination into dynamic, interactive stories where your choices truly matter. Powered by Google\'s Gemini, it generates rich narratives, complex characters, and branching storylines in real-time, offering a unique adventure every time you play.',
