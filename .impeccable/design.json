@@ -1,0 +1,720 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-08T00:00:00+00:00",
+  "title": "Design System: VANT Project",
+  "extensions": {
+    "colorMeta": {
+      "subtitle-white": {
+        "role": "primary",
+        "displayName": "Subtitle White",
+        "canonical": "#f2f1ee",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#131316",
+          "#1b1b1f",
+          "#2a2b30",
+          "#44464d",
+          "#84878e",
+          "#b4b6bc",
+          "#f2f1ee"
+        ]
+      },
+      "stage-black": {
+        "role": "neutral",
+        "displayName": "Stage Black",
+        "canonical": "#0b0b0c",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#131316",
+          "#1b1b1f",
+          "#2a2b30",
+          "#44464d",
+          "#84878e",
+          "#b4b6bc",
+          "#f2f1ee"
+        ]
+      },
+      "stage-raised": {
+        "role": "neutral",
+        "displayName": "Stage Raised",
+        "canonical": "#131316",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#131316",
+          "#1b1b1f",
+          "#2a2b30",
+          "#44464d",
+          "#84878e",
+          "#b4b6bc",
+          "#f2f1ee"
+        ]
+      },
+      "stage-high": {
+        "role": "neutral",
+        "displayName": "Stage High",
+        "canonical": "#1b1b1f",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#131316",
+          "#1b1b1f",
+          "#2a2b30",
+          "#44464d",
+          "#84878e",
+          "#b4b6bc",
+          "#f2f1ee"
+        ]
+      },
+      "letterbox-black": {
+        "role": "neutral",
+        "displayName": "Letterbox Black",
+        "canonical": "#000000",
+        "tonalRamp": [
+          "#000000",
+          "#0b0b0c",
+          "#131316",
+          "#1b1b1f",
+          "#2a2b30",
+          "#44464d",
+          "#84878e",
+          "#b4b6bc"
+        ]
+      },
+      "caption-grey": {
+        "role": "neutral",
+        "displayName": "Caption Grey",
+        "canonical": "#b4b6bc",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#131316",
+          "#1b1b1f",
+          "#2a2b30",
+          "#44464d",
+          "#84878e",
+          "#b4b6bc",
+          "#f2f1ee"
+        ]
+      },
+      "timecode-grey": {
+        "role": "neutral",
+        "displayName": "Timecode Grey",
+        "canonical": "#84878e",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#131316",
+          "#1b1b1f",
+          "#2a2b30",
+          "#44464d",
+          "#84878e",
+          "#b4b6bc",
+          "#f2f1ee"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#2a2b30",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#131316",
+          "#1b1b1f",
+          "#2a2b30",
+          "#44464d",
+          "#84878e",
+          "#b4b6bc",
+          "#f2f1ee"
+        ]
+      },
+      "hairline-strong": {
+        "role": "neutral",
+        "displayName": "Hairline Strong",
+        "canonical": "#44464d",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#131316",
+          "#1b1b1f",
+          "#2a2b30",
+          "#44464d",
+          "#84878e",
+          "#b4b6bc",
+          "#f2f1ee"
+        ]
+      },
+      "accent-lilac": {
+        "role": "secondary",
+        "displayName": "Lilac Accent",
+        "canonical": "#c4b2ff",
+        "tonalRamp": [
+          "#12004c",
+          "#1f0085",
+          "#2c00bd",
+          "#3900f5",
+          "#5f2eff",
+          "#8a66ff",
+          "#b9a3ff",
+          "#e4dbff"
+        ]
+      },
+      "accent-periwinkle": {
+        "role": "secondary",
+        "displayName": "Periwinkle Accent",
+        "canonical": "#a9c2ff",
+        "tonalRamp": [
+          "#00164c",
+          "#002785",
+          "#0037bd",
+          "#0047f5",
+          "#2e6bff",
+          "#6692ff",
+          "#a3beff",
+          "#dbe6ff"
+        ]
+      },
+      "accent-blush": {
+        "role": "secondary",
+        "displayName": "Blush Accent",
+        "canonical": "#ffb3d6",
+        "tonalRamp": [
+          "#4c0023",
+          "#85003d",
+          "#bd0057",
+          "#f50071",
+          "#ff2e8e",
+          "#ff66ac",
+          "#ffa3cd",
+          "#ffdbec"
+        ]
+      },
+      "accent-mint": {
+        "role": "secondary",
+        "displayName": "Mint Accent",
+        "canonical": "#a8e6b8",
+        "tonalRamp": [
+          "#113b1c",
+          "#1e6731",
+          "#2a9345",
+          "#37be5a",
+          "#5dd07a",
+          "#88dd9e",
+          "#b8ebc5",
+          "#e3f7e8"
+        ]
+      },
+      "accent-straw": {
+        "role": "secondary",
+        "displayName": "Straw Accent",
+        "canonical": "#f2d27a",
+        "tonalRamp": [
+          "#463507",
+          "#795c0c",
+          "#ac8311",
+          "#dfa916",
+          "#ecbf41",
+          "#f1d074",
+          "#f7e3ab",
+          "#fcf4de"
+        ]
+      },
+      "accent-apricot": {
+        "role": "secondary",
+        "displayName": "Apricot Accent",
+        "canonical": "#ffc9a0",
+        "tonalRamp": [
+          "#4c2100",
+          "#853900",
+          "#bd5100",
+          "#f56a00",
+          "#ff882e",
+          "#ffa866",
+          "#ffcba3",
+          "#ffebdb"
+        ]
+      },
+      "ambient-violet": {
+        "role": "tertiary",
+        "displayName": "Ambient Violet",
+        "canonical": "#6b4fd8",
+        "tonalRamp": [
+          "#180e3f",
+          "#29186d",
+          "#3b229a",
+          "#4c2cc8",
+          "#6f54d9",
+          "#9682e3",
+          "#c0b4ee",
+          "#e6e2f9"
+        ]
+      },
+      "ambient-cornflower": {
+        "role": "tertiary",
+        "displayName": "Ambient Cornflower",
+        "canonical": "#4f7fd6",
+        "tonalRamp": [
+          "#0e1f3e",
+          "#19366c",
+          "#244d99",
+          "#2e64c7",
+          "#5584d7",
+          "#83a5e2",
+          "#b5c9ee",
+          "#e2eaf8"
+        ]
+      },
+      "ambient-orchid": {
+        "role": "tertiary",
+        "displayName": "Ambient Orchid",
+        "canonical": "#d0569c",
+        "tonalRamp": [
+          "#3c1129",
+          "#681d48",
+          "#942966",
+          "#c03585",
+          "#d25b9f",
+          "#de87b9",
+          "#ebb7d5",
+          "#f7e3ef"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "title-card": {
+        "displayName": "Title Card",
+        "purpose": "Intro 'VANT' only; enters from blur(12px) and 0.5em tracking, settles to 0.04em."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "Opening H1 at semi-expanded width (112), balanced, max 17ch."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings at semi-expanded width (112)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Project names in the works at expanded width (125); smaller in the project index (1.35rem/1.15) and for Vibra/AnTiMa."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "The opening's first paragraph, Subtitle White, max 46ch."
+      },
+      "subtitle": {
+        "displayName": "Subtitle",
+        "purpose": "Translated subtitle lines; fade up in full when they enter."
+      },
+      "subtitle-jp": {
+        "displayName": "Subtitle JP",
+        "purpose": "Japanese source line above every translation, in the mood accent; never animates."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Descriptions and bios, 46-60ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Nav links, buttons, CC options, status pills."
+      },
+      "timecode": {
+        "displayName": "Timecode",
+        "purpose": "Chapter numerals, viewer caption, intro timecode only."
+      }
+    },
+    "shadows": [
+      {
+        "name": "frame-drop",
+        "value": "box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .8), 0 0 0 1px rgba(242, 241, 238, .08)",
+        "purpose": "Resting shadow and edge ring under each work screenshot frame; constant, never grows on hover."
+      },
+      {
+        "name": "thumb-ring",
+        "value": "box-shadow: 0 0 0 1px rgba(242, 241, 238, .1); hover 0 0 0 2px var(--accent)",
+        "purpose": "Edge ring on work thumbnails; accent ring on hover."
+      },
+      {
+        "name": "subtitle-halo",
+        "value": "text-shadow: 0 2px 14px rgba(0, 0, 0, .7)",
+        "purpose": "Legibility halo on subtitle translations."
+      },
+      {
+        "name": "translucent-panel",
+        "value": "background: rgba(19, 19, 22, .55); border: 1px solid rgba(242, 241, 238, .1) (index) | 1px dashed rgba(242, 241, 238, .18) (end card)",
+        "purpose": "Project index and works end card; the ambient light reads through."
+      },
+      {
+        "name": "scrim",
+        "value": "rgba(11, 11, 12, .82)",
+        "purpose": "Stage Black at alpha under the 'View screenshots' chip on work frames."
+      },
+      {
+        "name": "bar-glass",
+        "value": "background: rgba(11, 11, 12, .62); backdrop-filter: blur(16px) saturate(1.2)",
+        "purpose": "Translucent top bar, legible over the moving ambient colour."
+      },
+      {
+        "name": "ambient-leak",
+        "value": "radial-gradient(circle, var(--amb-x) 0%, transparent 66%); 70vmax; opacity .62 (.5 for c); mix-blend-mode: screen",
+        "purpose": "The three fixed light leaks behind the page."
+      },
+      {
+        "name": "grain",
+        "value": "SVG feTurbulence fractalNoise (baseFrequency .9, 2 octaves), opacity .07, inset -50%",
+        "purpose": "Film grain over the ambient layer."
+      },
+      {
+        "name": "viewer-backdrop",
+        "value": "rgba(0, 0, 0, .86)",
+        "purpose": "Dialog backdrop."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Entrances and state changes: reveals, subtitle lines, button wipes, link underline, image push-ins, viewer pop."
+      },
+      {
+        "name": "ease-io",
+        "value": "cubic-bezier(.65, 0, .35, 1)",
+        "purpose": "Cuts: mood cross-fade, intro bars splitting, scroll-cue loop."
+      },
+      {
+        "name": "state",
+        "value": "250ms",
+        "purpose": "Colour and background changes on nav, CC, pin ticks."
+      },
+      {
+        "name": "wipe",
+        "value": "500ms ease",
+        "purpose": "Button accent fill wipe (scaleX, origin right to left)."
+      },
+      {
+        "name": "underline",
+        "value": "450ms ease",
+        "purpose": "Text link underline draw; button text colour swap."
+      },
+      {
+        "name": "subtitle-line",
+        "value": "opacity 700ms, transform 900ms, filter 700ms ease; 18px + blur(8px)",
+        "purpose": "Pinned subtitle line enter/exit."
+      },
+      {
+        "name": "reveal",
+        "value": "opacity 900ms, transform 1000ms ease; 22px rise; 60ms stagger",
+        "purpose": "Scroll reveals for values, credits, contact."
+      },
+      {
+        "name": "subtitle-reveal",
+        "value": "420ms, cubic-bezier(.16,1,.3,1), opacity 0→1 + translateY 6px→0",
+        "purpose": "Subtitle translation reveal (app.js translateLine, .sub__vis.is-entering)."
+      },
+      {
+        "name": "stage-settle",
+        "value": "opacity 900ms, transform 1000ms ease; from translateY(18px); stagger 0/80/160/220/280ms, index 340ms",
+        "purpose": "Opening lines and project index settle in once the intro clears (.is-ready)."
+      },
+      {
+        "name": "scroll-cue",
+        "value": "2000ms ease-io infinite; 3x8px dot drops 12px and fades",
+        "purpose": "Scroll cue at the bottom of the opening."
+      },
+      {
+        "name": "index-row",
+        "value": "background 300ms; arrow translateX(4px) 400ms ease",
+        "purpose": "Project index row hover; also previews the project's mood."
+      },
+      {
+        "name": "frame-shutter",
+        "value": "clip-path inset(12% 6% 12% 6% round 14px) to inset(0 round 0), 1200ms ease",
+        "purpose": "Work screenshot frame opens like a shutter on reveal; dropped under reduced motion."
+      },
+      {
+        "name": "frame-settle",
+        "value": "image scale 1.06 to 1, 1200ms ease; hover scale 1.03",
+        "purpose": "Screenshot settles as the frame opens; push-in on hover."
+      },
+      {
+        "name": "thumb-hover",
+        "value": "opacity .7 to 1 (300ms), translateY(-3px) 400ms ease, 2px accent ring",
+        "purpose": "Work thumbnail hover."
+      },
+      {
+        "name": "intro",
+        "value": "title-in 1100ms ease (150ms delay); subtitle fade-up 600ms at 550/750ms; auto-exit 1650ms; bars 700ms ease-io; teardown 750ms; 24fps running timecode",
+        "purpose": "Opening title card, once per session."
+      },
+      {
+        "name": "converge",
+        "value": "progress over first 55% of 260svh pin, ease-out cubic; ±30vw slide, × rotates 90deg and scales from .4",
+        "purpose": "Vibra and AnTiMa shots meeting; colour returns at full progress (filter 1s)."
+      },
+      {
+        "name": "viewer-pop",
+        "value": "450ms ease; from translateY(14px) scale(.98)",
+        "purpose": "Screenshot dialog opening."
+      },
+      {
+        "name": "press",
+        "value": "scale(.97), 300ms ease",
+        "purpose": "Button active state."
+      },
+      {
+        "name": "mood-crossfade",
+        "value": "--amb-a/b/c 1600ms ease-io; --accent 800ms ease-io (registered @property <color>)",
+        "purpose": "Ambient light and accent cross-fade when the chapter or the project being read changes, or an index row is hovered."
+      },
+      {
+        "name": "ambient-float",
+        "value": "float-a 26s, float-b 32s, float-c 38s; ease-in-out infinite alternate; translate up to 22vw/26vh, scale .9 to 1.2",
+        "purpose": "Slow drift of the three light leaks."
+      },
+      {
+        "name": "grain",
+        "value": "1000ms steps(4) infinite; translate up to 3%",
+        "purpose": "Film grain jitter."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "all animation/transition durations .01ms; ambient float and grain stopped; pins released (static mode)",
+        "purpose": "Reduced-motion fallback."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "chapters-compact",
+        "value": "1080px",
+        "purpose": "Chapter numerals hide, links tighten."
+      },
+      {
+        "name": "static",
+        "value": "899px",
+        "purpose": "Static mode: no pins, 56px bar, opening and work rows stack to one column (media first), scroll cue hides, actions go full width, chapter list becomes now-playing label."
+      },
+      {
+        "name": "narrow",
+        "value": "420px",
+        "purpose": "CC badge hides."
+      }
+    ],
+    "moods": {
+      "source": "app.js MOODS -> setMood() writes --amb-a, --amb-b, --amb-c, --accent on :root; styles.css registers them with @property <color> and transitions ambient 1.6s / accent .8s var(--ease-io).",
+      "order": [
+        "amb-a",
+        "amb-b",
+        "amb-c",
+        "accent"
+      ],
+      "trigger": "Section whose box spans the viewport middle (data-mood); inside #works the last project (or end card) whose top has passed the middle wins, so the colour holds through the gaps; hovering a project index row (data-mood-hover) previews that mood until the pointer leaves.",
+      "palette": {
+        "stage": [
+          "#6b4fd8",
+          "#4f7fd6",
+          "#d0569c",
+          "#c4b2ff"
+        ],
+        "mission": [
+          "#3d4fd6",
+          "#2a8bd6",
+          "#7a4fd8",
+          "#a9c2ff"
+        ],
+        "members": [
+          "#1f9fd6",
+          "#d0569c",
+          "#6b4fd8",
+          "#ffb3d6"
+        ],
+        "antima": [
+          "#7a4fd8",
+          "#d0569c",
+          "#4f7fd6",
+          "#c4b2ff"
+        ],
+        "teaflow": [
+          "#2f9e62",
+          "#7bbf3a",
+          "#1f7f8c",
+          "#a8e6b8"
+        ],
+        "gaia": [
+          "#d4a72c",
+          "#8a5cd0",
+          "#b5532a",
+          "#f2d27a"
+        ],
+        "next": [
+          "#d0569c",
+          "#6b4fd8",
+          "#e07a3a",
+          "#ffb3d6"
+        ],
+        "credits": [
+          "#d27a2c",
+          "#c24f6e",
+          "#6b4fd8",
+          "#ffc9a0"
+        ],
+        "contact": [
+          "#6b4fd8",
+          "#d0569c",
+          "#1f9fd6",
+          "#ffb3d6"
+        ]
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "Solid Button",
+      "kind": "button",
+      "refersTo": "button-solid",
+      "description": "Primary action pill; a mood-accent fill wipes in from the left on hover.",
+      "html": "<a class=\"ds-btn ds-btn--solid\" href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 4.5v15l12-7.5z\" fill=\"currentColor\"/></svg><span>Watch the works</span></a>",
+      "css": ".ds-btn { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; font: 600 .98rem/1 var(--f-text, Archivo, system-ui, sans-serif); text-decoration: none; border: 1px solid var(--fg, #f2f1ee); transition: color .45s cubic-bezier(.16,1,.3,1), transform .3s cubic-bezier(.16,1,.3,1); } .ds-btn svg { width: 1.1em; height: 1.1em; transition: transform .4s cubic-bezier(.16,1,.3,1); } .ds-btn::before { content: \"\"; position: absolute; inset: 0; z-index: -1; transform: scaleX(0); transform-origin: right; transition: transform .5s cubic-bezier(.16,1,.3,1); } .ds-btn:hover::before { transform: scaleX(1); transform-origin: left; } .ds-btn:hover svg { transform: translateX(3px); } .ds-btn:active { transform: scale(.97); } .ds-btn:focus-visible { outline: 2px solid var(--fg, #f2f1ee); outline-offset: 4px; } .ds-btn--solid { background: var(--fg, #f2f1ee); color: var(--bg, #0b0b0c); } .ds-btn--solid::before { background: var(--accent, #c4b2ff); } .ds-btn--solid:hover { color: var(--bg, #0b0b0c); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action pill; fills with the mood accent on hover.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\"><span>Join AnTiMa on Discord</span></a>",
+      "css": ".ds-btn-ghost { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; font: 600 .98rem/1 var(--f-text, Archivo, system-ui, sans-serif); text-decoration: none; background: transparent; color: var(--fg, #f2f1ee); border: 1px solid var(--rule-2, #44464d); transition: color .45s cubic-bezier(.16,1,.3,1), border-color .25s, transform .3s cubic-bezier(.16,1,.3,1); } .ds-btn-ghost::before { content: \"\"; position: absolute; inset: 0; z-index: -1; background: var(--accent, #c4b2ff); transform: scaleX(0); transform-origin: right; transition: transform .5s cubic-bezier(.16,1,.3,1); } .ds-btn-ghost:hover { color: var(--bg, #0b0b0c); border-color: var(--accent, #c4b2ff); } .ds-btn-ghost:hover::before { transform: scaleX(1); transform-origin: left; } .ds-btn-ghost:active { transform: scale(.97); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--fg, #f2f1ee); outline-offset: 4px; }"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "refersTo": "tlink",
+      "description": "Repo, Discord and social links; a 2px accent underline draws in on hover.",
+      "html": "<a class=\"ds-tlink\" href=\"#\">Source on GitHub</a>",
+      "css": ".ds-tlink { display: inline-flex; align-items: center; gap: 8px; color: var(--fg, #f2f1ee); font: 500 1rem var(--f-text, Archivo, system-ui, sans-serif); text-decoration: none; padding-bottom: 3px; background: linear-gradient(var(--accent, #c4b2ff), var(--accent, #c4b2ff)) 0 100% / 0 2px no-repeat; transition: background-size .45s cubic-bezier(.16,1,.3,1), color .25s; } .ds-tlink:hover { background-size: 100% 2px; color: var(--accent, #c4b2ff); } .ds-tlink:focus-visible { outline: 2px solid var(--fg, #f2f1ee); outline-offset: 4px; }"
+    },
+    {
+      "name": "Chapter Nav + CC Switch",
+      "kind": "nav",
+      "refersTo": "chapter-link",
+      "description": "Translucent top bar: wordmark, numbered chapter pills (current fills with the accent), CC language switch.",
+      "html": "<header class=\"ds-bar\"><a class=\"ds-mark\" href=\"#\">VANT</a><nav class=\"ds-chapters\"><a href=\"#\"><span class=\"ds-tc\">01</span>Mission</a><a href=\"#\" aria-current=\"true\"><span class=\"ds-tc\">03</span>Works</a><a href=\"#\"><span class=\"ds-tc\">05</span>Contact</a></nav><div class=\"ds-cc\"><span class=\"ds-cc__badge\">CC</span><button type=\"button\" aria-pressed=\"true\">EN</button><button type=\"button\" aria-pressed=\"false\">ID</button></div></header>",
+      "css": ".ds-bar { display: flex; align-items: center; gap: 28px; height: 64px; padding: 0 24px; background: rgba(11,11,12,.62); -webkit-backdrop-filter: blur(16px) saturate(1.2); backdrop-filter: blur(16px) saturate(1.2); border-bottom: 1px solid var(--rule, #2a2b30); color: var(--fg, #f2f1ee); font-family: var(--f-text, Archivo, system-ui, sans-serif); } .ds-mark { font: 800 1.35rem/1 var(--f-text, Archivo, sans-serif); font-stretch: 125%; letter-spacing: .06em; color: inherit; text-decoration: none; } .ds-chapters { display: flex; gap: 6px; margin-left: auto; } .ds-chapters a { display: inline-flex; align-items: baseline; gap: 8px; padding: 8px 12px; border-radius: 999px; font-size: .9rem; color: var(--fg-2, #b4b6bc); text-decoration: none; transition: color .25s, background-color .25s; } .ds-tc { font: 500 .72rem var(--f-mono, 'JetBrains Mono', monospace); color: var(--fg-3, #84878e); } .ds-chapters a:hover { color: var(--fg, #f2f1ee); background: var(--bg-3, #1b1b1f); } .ds-chapters a[aria-current=\"true\"] { color: var(--bg, #0b0b0c); background: var(--accent, #c4b2ff); } .ds-chapters a[aria-current=\"true\"] .ds-tc { color: var(--bg, #0b0b0c); } .ds-chapters a:focus-visible, .ds-cc button:focus-visible { outline: 2px solid var(--fg, #f2f1ee); outline-offset: 4px; } .ds-cc { display: flex; align-items: center; gap: 2px; border: 1px solid var(--rule-2, #44464d); border-radius: 999px; padding: 3px; } .ds-cc__badge { font: 700 .62rem/1 var(--f-text, Archivo, sans-serif); letter-spacing: .04em; border: 1.5px solid var(--fg-2, #b4b6bc); color: var(--fg-2, #b4b6bc); border-radius: 3px; padding: 2px 3px; margin: 0 6px 0 7px; } .ds-cc button { border: 0; background: none; cursor: pointer; border-radius: 999px; padding: 4px 10px; font: 600 .78rem var(--f-text, Archivo, sans-serif); color: var(--fg-2, #b4b6bc); transition: background-color .25s, color .25s; } .ds-cc button:hover { color: var(--fg, #f2f1ee); } .ds-cc button[aria-pressed=\"true\"] { background: var(--fg, #f2f1ee); color: var(--bg, #0b0b0c); }"
+    },
+    {
+      "name": "Subtitle Pair",
+      "kind": "custom",
+      "refersTo": "subtitle",
+      "description": "Signature: accent-tinted Japanese source line over the translated line; the translation fades up 6px over 420ms.",
+      "html": "<p class=\"ds-sub\"><span class=\"ds-sub__jp\" lang=\"ja\">語学は、宿題みたいであるべきじゃない。</span><span class=\"ds-sub__tl\">Learning a language shouldn’t feel like homework.</span></p>",
+      "css": ".ds-sub { margin: 0; display: grid; justify-items: center; gap: 10px; text-align: center; padding: 48px 24px; background: var(--bg, #0b0b0c); } .ds-sub__jp { font: 400 .95rem/1.5 var(--f-jp, 'Noto Sans JP', sans-serif); color: var(--accent, #c4b2ff); letter-spacing: .03em; } .ds-sub__tl { display: inline-block; font: 500 clamp(1.7rem, 4.2vw, 3.4rem)/1.18 var(--f-text, Archivo, system-ui, sans-serif); letter-spacing: -.01em; color: var(--fg, #f2f1ee); text-shadow: 0 2px 14px rgba(0,0,0,.7); text-wrap: balance; animation: ds-sub-in .42s cubic-bezier(.16,1,.3,1) both; } @keyframes ds-sub-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }"
+    },
+    {
+      "name": "Project Index",
+      "kind": "nav",
+      "refersTo": "project-index",
+      "description": "Signature: the opening's translucent map of the works; hovering a row washes it, nudges the accent arrow and previews that project's mood.",
+      "html": "<nav class=\"ds-index\"><h2 class=\"ds-index__title\">What we’ve made</h2><ol class=\"ds-index__list\"><li><a href=\"#\"><span class=\"ds-index__name\">AnTiMa</span><span class=\"ds-index__what\">AI companion for Discord communities</span><span class=\"ds-index__status\">Live</span><svg class=\"ds-index__go\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a></li><li><a href=\"#\"><span class=\"ds-index__name\">TeaFlow</span><span class=\"ds-index__what\">AI tutor you practise speaking with</span><span class=\"ds-index__status\">In progress</span><svg class=\"ds-index__go\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a></li><li><a href=\"#\" class=\"ds-index__open\"><span class=\"ds-index__name\">Your project here</span><span class=\"ds-index__what\">Open to collaborators</span><svg class=\"ds-index__go\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a></li></ol></nav>",
+      "css": ".ds-index { max-width: 460px; background: rgba(19,19,22,.55); border: 1px solid rgba(242,241,238,.1); border-radius: 16px; padding: 22px 8px 8px; color: var(--fg, #f2f1ee); font-family: var(--f-text, Archivo, system-ui, sans-serif); } .ds-index__title { margin: 0 16px 10px; font-size: .9rem; font-weight: 600; color: var(--fg-2, #b4b6bc); } .ds-index__list { list-style: none; margin: 0; padding: 0; } .ds-index__list a { display: grid; grid-template-columns: 1fr auto; grid-template-areas: \"name status\" \"what go\"; gap: 2px 16px; align-items: baseline; padding: 16px; border-radius: 10px; color: inherit; text-decoration: none; transition: background-color .3s; } .ds-index__list li + li a { border-top: 1px solid rgba(242,241,238,.08); } .ds-index__list a:hover, .ds-index__list a:focus-visible { background: rgba(242,241,238,.06); border-top-color: transparent; } .ds-index__list a:focus-visible { outline: 2px solid var(--fg, #f2f1ee); outline-offset: 4px; } .ds-index__name { grid-area: name; font: 800 1.35rem/1.15 var(--f-text, Archivo, sans-serif); font-stretch: 125%; letter-spacing: .02em; } .ds-index__what { grid-area: what; color: var(--fg-2, #b4b6bc); font-size: .95rem; } .ds-index__status { grid-area: status; font-size: .78rem; font-weight: 600; color: var(--accent, #c4b2ff); } .ds-index__go { grid-area: go; justify-self: end; width: 18px; height: 18px; color: var(--fg-3, #84878e); transition: transform .4s cubic-bezier(.16,1,.3,1), color .3s; } .ds-index__list a:hover .ds-index__go { transform: translateX(4px); color: var(--accent, #c4b2ff); } .ds-index__open .ds-index__name { font-stretch: 100%; font-weight: 600; font-size: 1.1rem; letter-spacing: 0; color: var(--fg-2, #b4b6bc); }"
+    },
+    {
+      "name": "Work Frame + Thumbnails",
+      "kind": "card",
+      "refersTo": "work-frame",
+      "description": "Signature: 16:10 black screenshot frame (14px, resting drop shadow) with a 'View screenshots' chip that fills with the accent on hover, over a row of thumbnails that rise 3px with an accent ring.",
+      "html": "<div class=\"ds-work\"><button type=\"button\" class=\"ds-work__frame\"><span class=\"ds-work__img\"></span><span class=\"ds-work__open\">View screenshots · 4</span></button><div class=\"ds-work__thumbs\"><button type=\"button\"></button><button type=\"button\"></button><button type=\"button\"></button></div></div>",
+      "css": ".ds-work { display: grid; gap: 12px; max-width: 560px; font-family: var(--f-text, Archivo, system-ui, sans-serif); } .ds-work__frame { position: relative; display: block; width: 100%; padding: 0; border: 0; cursor: zoom-in; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 14px; background: #000; box-shadow: 0 30px 80px -30px rgba(0,0,0,.8), 0 0 0 1px rgba(242,241,238,.08); } .ds-work__img { position: absolute; inset: 0; background: linear-gradient(160deg, #1b1b1f, #000 70%); transition: transform 1.2s cubic-bezier(.16,1,.3,1); } .ds-work__frame:hover .ds-work__img { transform: scale(1.03); } .ds-work__frame:focus-visible { outline: 2px solid var(--fg, #f2f1ee); outline-offset: 4px; } .ds-work__open { position: absolute; right: 12px; bottom: 12px; padding: 8px 14px; border-radius: 999px; background: rgba(11,11,12,.82); color: var(--fg, #f2f1ee); font-size: .85rem; font-weight: 500; transition: background-color .3s, color .3s; } .ds-work__frame:hover .ds-work__open { background: var(--accent, #c4b2ff); color: var(--bg, #0b0b0c); } .ds-work__thumbs { display: flex; gap: 10px; } .ds-work__thumbs button { flex: 1 1 0; max-width: 140px; aspect-ratio: 16 / 10; padding: 0; border: 0; cursor: zoom-in; border-radius: 8px; background: #000; opacity: .7; box-shadow: 0 0 0 1px rgba(242,241,238,.1); transition: opacity .3s, box-shadow .3s, transform .4s cubic-bezier(.16,1,.3,1); } .ds-work__thumbs button:hover, .ds-work__thumbs button:focus-visible { opacity: 1; transform: translateY(-3px); box-shadow: 0 0 0 2px var(--accent, #c4b2ff); outline: none; }"
+    },
+    {
+      "name": "Works End Card",
+      "kind": "card",
+      "refersTo": "work-next",
+      "description": "Dashed translucent card that closes the works with an open invitation.",
+      "html": "<aside class=\"ds-next\"><p class=\"ds-next__sub\"><span lang=\"ja\">次は、あなたのプロジェクト。</span><span>Your project here</span></p><p class=\"ds-next__body\">The next one is open. If you have an idea, a community or a skill that fits, let’s make it together.</p><a class=\"ds-next__btn\" href=\"#\">Start a conversation</a></aside>",
+      "css": ".ds-next { display: grid; justify-items: center; text-align: center; gap: 18px; padding: 56px 24px; border-radius: 18px; background: rgba(19,19,22,.55); border: 1px dashed rgba(242,241,238,.18); color: var(--fg, #f2f1ee); font-family: var(--f-text, Archivo, system-ui, sans-serif); } .ds-next__sub { margin: 0; display: grid; gap: 10px; } .ds-next__sub span:first-child { font: 400 .95rem/1.5 var(--f-jp, 'Noto Sans JP', sans-serif); color: var(--accent, #c4b2ff); letter-spacing: .03em; } .ds-next__sub span:last-child { font: 700 clamp(1.8rem, 3.4vw, 3rem)/1.1 var(--f-text, Archivo, sans-serif); letter-spacing: -.02em; } .ds-next__body { margin: 0; color: var(--fg-2, #b4b6bc); max-width: 46ch; } .ds-next__btn { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 999px; border: 1px solid var(--rule-2, #44464d); color: inherit; font-weight: 600; text-decoration: none; transition: color .45s cubic-bezier(.16,1,.3,1), border-color .25s; } .ds-next__btn::before { content: \"\"; position: absolute; inset: 0; z-index: -1; background: var(--accent, #c4b2ff); transform: scaleX(0); transform-origin: right; transition: transform .5s cubic-bezier(.16,1,.3,1); } .ds-next__btn:hover { border-color: var(--accent, #c4b2ff); color: var(--bg, #0b0b0c); } .ds-next__btn:hover::before { transform: scaleX(1); transform-origin: left; } .ds-next__btn:focus-visible { outline: 2px solid var(--fg, #f2f1ee); outline-offset: 4px; }"
+    },
+    {
+      "name": "Status Pill",
+      "kind": "chip",
+      "refersTo": "status-pill",
+      "description": "Project status: Live fills with the mood accent, In progress has a hollow dot, Open source a solid dot.",
+      "html": "<span class=\"ds-status ds-status--live\">Live</span> <span class=\"ds-status ds-status--wip\">In progress</span> <span class=\"ds-status\">Open source</span>",
+      "css": ".ds-status { display: inline-flex; align-items: center; gap: 7px; padding: 3px 10px; border-radius: 999px; font: 600 .74rem/1.4 var(--f-text, Archivo, system-ui, sans-serif); letter-spacing: .02em; border: 1px solid var(--rule-2, #44464d); color: var(--fg, #f2f1ee); } .ds-status::before { content: \"\"; width: 6px; height: 6px; border-radius: 50%; background: currentColor; } .ds-status--live { background: var(--accent, #c4b2ff); color: var(--bg, #0b0b0c); border-color: var(--accent, #c4b2ff); } .ds-status--wip::before { background: transparent; border: 1.5px solid currentColor; }"
+    },
+    {
+      "name": "Ambient Light",
+      "kind": "custom",
+      "refersTo": "ambient",
+      "description": "Signature: three screen-blended radial light leaks in the current mood, drifting behind the near-black stage under film grain.",
+      "html": "<div class=\"ds-amb\"><div class=\"ds-amb__light\"><i class=\"a\"></i><i class=\"b\"></i><i class=\"c\"></i></div><div class=\"ds-amb__grain\"></div><p class=\"ds-amb__sub\"><span lang=\"ja\">作品を見る</span><span>Watch the works</span></p></div>",
+      "css": ".ds-amb { --amb-a: #6b4fd8; --amb-b: #4f7fd6; --amb-c: #d0569c; --accent: #c4b2ff; position: relative; isolation: isolate; overflow: hidden; height: 280px; background: #0b0b0c; border-radius: 4px; display: grid; place-items: center; font-family: Archivo, system-ui, sans-serif; } .ds-amb__light { position: absolute; inset: 0; z-index: -1; } .ds-amb__light i { position: absolute; width: 420px; height: 420px; border-radius: 50%; opacity: .62; mix-blend-mode: screen; } .ds-amb__light .a { background: radial-gradient(circle, var(--amb-a) 0%, transparent 66%); left: -140px; top: -180px; animation: ds-fa 26s ease-in-out infinite alternate; } .ds-amb__light .b { background: radial-gradient(circle, var(--amb-b) 0%, transparent 66%); right: -170px; top: 20px; animation: ds-fb 32s ease-in-out infinite alternate; } .ds-amb__light .c { background: radial-gradient(circle, var(--amb-c) 0%, transparent 66%); left: 30%; bottom: -260px; opacity: .5; animation: ds-fc 38s ease-in-out infinite alternate; } @keyframes ds-fa { to { transform: translate(18%, 22%) scale(1.15); } } @keyframes ds-fb { to { transform: translate(-22%, 18%) scale(.9); } } @keyframes ds-fc { to { transform: translate(14%, -26%) scale(1.2); } } .ds-amb__grain { position: absolute; inset: -50%; z-index: -1; opacity: .07; pointer-events: none; background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\"); animation: ds-grain 1s steps(4) infinite; } @keyframes ds-grain { 25% { transform: translate(-3%, 2%); } 50% { transform: translate(2%, -3%); } 75% { transform: translate(-1%, -2%); } } .ds-amb__sub { margin: 0; display: grid; justify-items: center; gap: 8px; text-align: center; } .ds-amb__sub span:first-child { font: 400 .95rem/1.5 'Noto Sans JP', sans-serif; color: var(--accent); } .ds-amb__sub span:last-child { font-size: 2rem; font-weight: 500; color: #f2f1ee; text-shadow: 0 2px 14px rgba(0,0,0,.7); } @media (prefers-reduced-motion: reduce) { .ds-amb__light i, .ds-amb__grain { animation: none; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Subtitle Track",
+    "northStarStatus": "provisional (from the direction contract FORM name; user not yet asked)",
+    "overview": "The site is a translated film. Everything VANT says arrives as a subtitle: a small Japanese line tinted in the scene's accent above, a large off-white line below that fades up into English or Indonesian as it enters. The opening is text-led: a two-column first viewport with the Japanese caption, a semi-expanded headline, a lead and body paragraph and two actions on the left, and a translucent \"What we've made\" project index on the right that maps the works and previews each project's colour mood on hover. Chrome is cinema chrome: a thin, translucent top bar with numbered chapters and a CC language switch. Sections run straight into one another with no rules between them; the cut is carried by the light.\n\nColour is graded like a film, per scene. Behind everything, three large radial light leaks drift slowly across the stage and blend onto the black, under a fine animated film grain. Each chapter has a mood: three ambient hues and one light accent. As the reader scrolls into a new chapter the ambient light cross-fades to that mood over 1.6s and the accent follows over 0.8s; in the works the mood follows the project being read and holds through the gap until the next one. The interface surfaces themselves stay black, greys and one warm off-white; hue lives in the light behind them, in the accent, and in the screenshots. Density is low and paced: mission lines pin to the viewport and advance one at a time, two shots converge, the works read as a vertical sequence of large black screenshot frames alternating sides, credits roll centered, and the closing scene asks one question. Screenshots appear only in the works. The direction explicitly refuses the neon AI-startup hero and the grid-of-cards portfolio.\n\nMotion is the grammar, not decoration: cross-fades between moods, an opening that settles in line by line once the intro clears, lines that blur up into place, two shots that slide together from the edges, screenshot frames that open like a shutter. Every motion path has a static fallback; phones and reduced-motion readers get the same content unpinned and fully revealed, with the light leaks and grain held still.",
+    "keyCharacteristics": [
+      "Dark-only stage; colour arrives as graded ambient light and one accent per mood.",
+      "Subtitle pairs (accent-tinted Japanese over white translation) are the voice of the page.",
+      "A text-led opening beside a translucent project index; imagery lives only in the works.",
+      "Screenshots in pure black, softly rounded frames sitting on a slightly lifted near-black stage.",
+      "Expanded-width Archivo for names and title cards; semi-expanded for headings; normal width for reading.",
+      "Numbered chapters as the navigation device; no section rules, no timeline.",
+      "Active state is a light fill with Stage Black text: the mood accent for chapters, buttons, Live and the screenshot chip, Subtitle White for the pressed CC option."
+    ],
+    "rules": [
+      {
+        "name": "The Graded Light Rule",
+        "body": "Hue enters the interface only as light: the three ambient leaks behind the stage and the one mood accent. Surfaces, frames and body text stay on the neutral ladder. Mood changes are cross-fades (ambient 1.6s, accent 0.8s, `ease-io`), never cuts. A chapter owns one mood, with two deliberate exceptions: inside the works the mood follows the project being read (the last project whose top has passed the viewport middle), holding through the gaps between projects; and hovering a project index row previews that project's mood until the pointer leaves. Some imagery holds its own colour back: the converge shots and the developer portrait sit in grayscale (`grayscale(1) contrast(1.05)`) until the two shots meet or the portrait is hovered.",
+        "section": "colors"
+      },
+      {
+        "name": "The Light-Fill Active Rule",
+        "body": "\"On\" is always a light fill with Stage Black text. Chapter, Live status, button hover and the hovered screenshot chip use the mood accent; the pressed CC option and the resting solid button use Subtitle White. No other active treatment exists.",
+        "section": "colors"
+      },
+      {
+        "name": "The Subtitle Pair Rule",
+        "body": "A statement that matters is a pair: Japanese small and accent-tinted on top, the translation large and white beneath; centered everywhere except the opening, where the caption sits left-aligned over the headline. The translation appears in full at once and fades up 6px over 420ms; the Japanese never animates on its own. No letter-by-letter or glyph scramble effects: the user found them slow and confusing.",
+        "section": "typography"
+      },
+      {
+        "name": "The Mono Means Numerals Rule",
+        "body": "JetBrains Mono appears only for the intro timecode, counters and chapter numerals. Never for prose, labels or buttons.",
+        "section": "typography"
+      },
+      {
+        "name": "The Width Ladder Rule",
+        "body": "Expanded width (125) is for names and title cards; 112 for the opening headline, section and credit headings; 100 for anything read as a sentence.",
+        "section": "typography"
+      },
+      {
+        "name": "The Black Frame Rule",
+        "body": "Imagery always sits in a Letterbox Black well at 16:10, filled by `object-fit: cover` and biased toward the top. Work frames and thumbnails carry soft corners (14px, 8px); converge shots stay near-square (4px). Screenshots belong to the works; the opening carries no imagery.",
+        "section": "layout"
+      },
+      {
+        "name": "The Fixed Layers Rule",
+        "body": "Only three things are fixed: the ambient light and grain behind the page (z-index -1, pointer-events none) and the top bar above it. Everything else scrolls or pins inside the flow.",
+        "section": "layout"
+      },
+      {
+        "name": "The Resting Shadow Rule",
+        "body": "Only the work screenshot frames cast a shadow, and it is constant: it never grows, darkens or lifts on hover. Interaction shows by accent wipes, underline draws, image push-ins, colour return and the accent chip; the only movement off the surface is a 3px rise on a hovered thumbnail and a 4px nudge on index arrows.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do bring colour in as graded light: set a chapter's mood (three ambient hues plus one light accent) and let it cross-fade (The Graded Light Rule).",
+      "Do keep surfaces, frames and body text on the neutral ladder; use the accent only from the list in Colors.",
+      "Do state anything important as a Subtitle pair: accent Japanese line in Noto Sans JP over a white translation that fades in.",
+      "Do show \"on\" as a light fill with Stage Black text (accent, or Subtitle White for the CC option).",
+      "Do put screenshots in a Letterbox Black 16:10 frame (14px corners in the works, 8px for thumbnails) and keep them in the works.",
+      "Do make controls full pills and give them the accent wipe or underline-draw hover.",
+      "Do use `cubic-bezier(.16, 1, .3, 1)` for entrances and state changes, and `cubic-bezier(.65, 0, .35, 1)` for cuts, cross-fades and mood changes.",
+      "Do give every pinned or scroll-driven sequence a static fallback for widths under 900px and for reduced motion."
+    ],
+    "donts": [
+      "Don't put ambient hues on text, controls or surfaces, or use the accent as a dark fill or body text colour.",
+      "Don't cut between moods; let the 1.6s / 0.8s cross-fade carry the change, and only let the works and the index hover change mood inside a chapter.",
+      "Don't add a light theme, neon glow on type, or a neon AI-startup hero; don't build a grid of cards; works read as alternating frame-and-text rows.",
+      "Don't separate sections with hairline rules or reintroduce a scrub timeline or per-chapter timecodes.",
+      "Don't use JetBrains Mono for anything but numerals, counters and the intro timecode.",
+      "Don't add shadows beyond the resting frame drop, or grow shadows and lift cards on hover (The Resting Shadow Rule).",
+      "Don't animate the Japanese source line on its own; only the translation fades in."
+    ]
+  }
+}
