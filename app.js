@@ -112,27 +112,12 @@ const subTicks = $$('.pin__progress i', subPin);
 const convergePin = $('.pin--converge');
 let lastStep = -1;
 
-/* Colour moods: each chapter (and each project in the works) grades the ambient light */
-const MOODS = {
-    stage:   ['#6b4fd8', '#4f7fd6', '#d0569c', '#c4b2ff'],
-    mission: ['#3d4fd6', '#2a8bd6', '#7a4fd8', '#a9c2ff'],
-    members: ['#1f9fd6', '#d0569c', '#6b4fd8', '#ffb3d6'],
-    antima:  ['#7a4fd8', '#d0569c', '#4f7fd6', '#c4b2ff'],
-    teaflow: ['#2f9e62', '#7bbf3a', '#1f7f8c', '#a8e6b8'],
-    gaia:    ['#d4a72c', '#8a5cd0', '#b5532a', '#f2d27a'],
-    next:    ['#d0569c', '#6b4fd8', '#e07a3a', '#ffb3d6'],
-    credits: ['#d27a2c', '#c24f6e', '#6b4fd8', '#ffc9a0'],
-    contact: ['#6b4fd8', '#d0569c', '#1f9fd6', '#ffb3d6']
-};
+/* Chapter moods: still tracked (the dial and secrets listen for them), no longer recolour the page */
+const MOODS = { stage: 1, mission: 1, members: 1, antima: 1, teaflow: 1, gaia: 1, next: 1, credits: 1, contact: 1 };
 let mood = '';
 function setMood(name) {
     if (!MOODS[name] || name === mood) return;
     mood = name;
-    const [a, b, c, accent] = MOODS[name];
-    root.style.setProperty('--amb-a', a);
-    root.style.setProperty('--amb-b', b);
-    root.style.setProperty('--amb-c', c);
-    root.style.setProperty('--accent', accent);
     dispatchEvent(new CustomEvent('vant:mood', { detail: name }));
 }
 const moodSections = $$('[data-mood]');

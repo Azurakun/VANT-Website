@@ -1,4 +1,4 @@
-// fun.js — chapter dial, secret codes, click surprises, active background, cursor and hovers.
+// fun.js — chapter dial, secret codes, click surprises, tap ripples and hovers.
 
 import { quips } from './data.js';
 
@@ -179,34 +179,6 @@ export function initFun({ t, getLang }) {
         }
     });
 
-    /* ---------- Active background: the light follows you and stretches with scroll ---------- */
-
-    const amb = $$('.ambient i');
-    const spot = $('.ambient__spot');
-    if (amb.length && !reduceMotion.matches) {
-        let px = .5, py = .4, tx = .5, ty = .4, vel = 0, lastY = scrollY, lastT = performance.now();
-        const setTarget = (x, y) => { tx = x / innerWidth; ty = y / innerHeight; root.classList.add('is-lit'); };
-        addEventListener('pointermove', e => setTarget(e.clientX, e.clientY), { passive: true });
-        addEventListener('touchmove', e => { const p = e.touches[0]; if (p) setTarget(p.clientX, p.clientY); }, { passive: true });
-        addEventListener('pointerdown', e => { setTarget(e.clientX, e.clientY); vel = Math.min(1, vel + .5); }, { passive: true });
-        const loop = now => {
-            const dt = Math.max(1, now - lastT);
-            const dy = scrollY - lastY;
-            lastY = scrollY; lastT = now;
-            vel += (Math.min(1, Math.abs(dy) / dt / 2.5) - vel) * .08;
-            px += (tx - px) * .06;
-            py += (ty - py) * .06;
-            const ox = (px - .5), oy = (py - .5);
-            amb[0].style.translate = `${ox * 34}vw ${oy * 30}vh`;
-            amb[1].style.translate = `${-ox * 26}vw ${-oy * 24}vh`;
-            amb[2].style.translate = `${ox * 16}vw ${-oy * 18}vh`;
-            amb.forEach((el, i) => { el.style.scale = `${1 + vel * (.25 + i * .08)} ${1 - vel * .12}`; });
-            if (spot) spot.style.transform = `translate3d(${px * innerWidth}px, ${py * innerHeight}px, 0)`;
-            requestAnimationFrame(loop);
-        };
-        requestAnimationFrame(loop);
-    }
-
     /* ---------- Sakura petals ---------- */
 
     function petals(count = 90) {
@@ -220,7 +192,7 @@ export function initFun({ t, getLang }) {
         canvas.height = innerHeight * dpr;
         const ctx = canvas.getContext('2d');
         ctx.scale(dpr, dpr);
-        const colors = ['#ffc2dc', '#ffb3d6', '#f7a1c4', '#ffd9e8', '#e88bb5'];
+        const colors = ['#FF5A36', '#ff7a5c', '#4FB89A', '#F3EEE6'];
         const ps = Array.from({ length: count }, () => ({
             x: Math.random() * innerWidth,
             y: -20 - Math.random() * innerHeight * .6,
@@ -302,34 +274,6 @@ export function initFun({ t, getLang }) {
 
     if (!finePointer.matches || reduceMotion.matches) return;
 
-    const cursor = document.createElement('div');
-    cursor.className = 'cursor';
-    cursor.setAttribute('aria-hidden', 'true');
-    cursor.innerHTML = '<span class="cursor__label"></span>';
-    document.body.append(cursor);
-    root.classList.add('has-cursor');
-    const label = $('.cursor__label', cursor);
-    let mx = innerWidth / 2, my = innerHeight / 2, cx = mx, cy = my;
-    addEventListener('pointermove', e => { mx = e.clientX; my = e.clientY; cursor.classList.add('is-on'); }, { passive: true });
-    document.addEventListener('pointerleave', () => cursor.classList.remove('is-on'));
-    const follow = () => {
-        cx += (mx - cx) * .2;
-        cy += (my - cy) * .2;
-        cursor.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
-        requestAnimationFrame(follow);
-    };
-    requestAnimationFrame(follow);
-
-    document.addEventListener('pointerover', e => {
-        const frame = e.target.closest('.work__frame, .work__thumbs button');
-        const link = e.target.closest('a, button, label');
-        cursor.classList.toggle('is-view', !!frame);
-        cursor.classList.toggle('is-link', !!link && !frame);
-        label.textContent = frame ? (getLang() === 'id' ? 'Lihat' : 'View') : '';
-    });
-    addEventListener('pointerdown', () => cursor.classList.add('is-down'));
-    addEventListener('pointerup', () => cursor.classList.remove('is-down'));
-
     // buttons lean toward the pointer
     $$('.btn').forEach(btn => {
         btn.addEventListener('pointermove', e => {
@@ -348,8 +292,6 @@ export function initFun({ t, getLang }) {
             const px = (e.clientX - r.left) / r.width - .5;
             const py = (e.clientY - r.top) / r.height - .5;
             frame.style.transform = `perspective(1100px) rotateY(${px * 6}deg) rotateX(${-py * 5}deg)`;
-            frame.style.setProperty('--gx', `${(px + .5) * 100}%`);
-            frame.style.setProperty('--gy', `${(py + .5) * 100}%`);
         });
         frame.addEventListener('pointerleave', () => { frame.style.transform = ''; });
     });
