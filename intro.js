@@ -1,6 +1,6 @@
 // intro.js — the 7-second title sequence: screentone field, kinetic type, manga panels.
 
-const LILAC = '#c4b2ff', MINT = '#a8e6b8', GOLD = '#f2d27a', PINK = '#ffb3d6';
+const LILAC = '#FF5A36', MINT = '#4FB89A', GOLD = '#F3EEE6', PINK = '#FF5A36';   // Ink & Vermilion palette
 const OUT = 'cubic-bezier(.16, 1, .3, 1)';
 const SNAP = 'cubic-bezier(.7, 0, .2, 1)';
 const BACK = 'cubic-bezier(.34, 1.56, .64, 1)';
