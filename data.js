@@ -11,7 +11,7 @@ export const translations = {
         'area-creative': 'Creative projects',
         'area-apps-d': 'Survey, management and other practical tools',
         'area-apps': 'Apps for everyday work',
-        'area-photo-d': 'Photos by VANT and the people who’ve joined us',
+        'area-photo-d': 'Photo gallery and LensQuest, our photo-quest app',
         'area-photo': 'Photography',
         'area-tools-d': 'AnTiMa, TeaFlow and GAIA',
         'area-tools': 'Learning & AI tools',
@@ -71,7 +71,10 @@ export const translations = {
         'antima-body': 'The creative and technical core of VANT, where anime, language learning and AI meet. AnTiMa builds the anime-inspired tools and AI features, and keeps growing.',
 
         'works-title': 'The works',
-        'works-lead': 'Some of what we’ve built so far: three projects, live or open source. Open any screenshot to see more.',
+        'works-lead': 'Some of what we’ve built so far. Open any screenshot to see more.',
+        'lensquest-sub': 'Photo quests for your kit lenses',
+        'lensquest-desc': 'A photo-quest web app for your kit lenses. Get a random set of challenges for your 18–55mm or 55–250mm, go out and shoot around your town, and earn your way up. No password: your name is your save.',
+        'link-app': 'Open LensQuest',
         'view-all': 'View screenshots',
         'status-live': 'Live',
         'status-wip': 'In progress',
@@ -117,7 +120,7 @@ export const translations = {
         'area-creative': 'Proyek kreatif',
         'area-apps-d': 'Survei, manajemen, dan alat praktis lainnya',
         'area-apps': 'Aplikasi untuk kerja sehari-hari',
-        'area-photo-d': 'Foto dari VANT dan orang-orang yang bergabung',
+        'area-photo-d': 'Galeri foto dan LensQuest, aplikasi tantangan foto kami',
         'area-photo': 'Fotografi',
         'area-tools-d': 'AnTiMa, TeaFlow, dan GAIA',
         'area-tools': 'Alat belajar & AI',
@@ -177,7 +180,10 @@ export const translations = {
         'antima-body': 'Inti kreatif dan teknis VANT, tempat anime, belajar bahasa, dan AI bertemu. AnTiMa membangun alat bernuansa anime dan fitur AI-nya, dan terus berkembang.',
 
         'works-title': 'Karya kami',
-        'works-lead': 'Sebagian yang sudah kami buat: tiga proyek, aktif atau sumber terbuka. Buka tangkapan layar mana pun untuk melihat lebih banyak.',
+        'works-lead': 'Sebagian yang sudah kami buat. Buka tangkapan layar mana pun untuk melihat lebih banyak.',
+        'lensquest-sub': 'Tantangan foto untuk lensa kit-mu',
+        'lensquest-desc': 'Aplikasi web tantangan foto untuk lensa kit-mu. Dapatkan serangkaian tantangan acak untuk lensa 18–55mm atau 55–250mm, keluar dan potret di sekitar kotamu, lalu naik tingkat. Tanpa kata sandi: namamu adalah penyimpanan progresmu.',
+        'link-app': 'Buka LensQuest',
         'view-all': 'Lihat tangkapan layar',
         'status-live': 'Aktif',
         'status-wip': 'Dalam pengembangan',
@@ -217,7 +223,8 @@ export const translations = {
 export const projects = {
     antima: { name: 'AnTiMa', images: ['img/antimabot_1.png', 'img/WEB.png', 'img/antimabot_2.png', 'img/antimabot_3.png'] },
     teaflow: { name: 'TeaFlow', images: ['img/TeaF_1.png', 'img/TeaF_3.png', 'img/TeaF_4.png'] },
-    gaia: { name: 'GAIA', images: ['img/gaia_thmb.png', 'img/gaia_1.png', 'img/gaia_4.png', 'img/gaia_2.png', 'img/gaia_3.png'] }
+    gaia: { name: 'GAIA', images: ['img/gaia_thmb.png', 'img/gaia_1.png', 'img/gaia_4.png', 'img/gaia_2.png', 'img/gaia_3.png'] },
+    lensquest: { name: 'LensQuest', images: ['img/lensquest_hero.png', 'img/lensquest_m3.jpg', 'img/lensquest_m4.jpg', 'img/lensquest_m5.jpg', 'img/lensquest_m6.jpg', 'img/lensquest_m7.jpg', 'img/lensquest_m1.png'] }
 };
 
 // Short quips for secrets and hints: Japanese first, then the reader's language.
