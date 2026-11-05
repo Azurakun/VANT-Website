@@ -36,17 +36,19 @@ Visitors read on desktop and phone, often coming from Discord or social links. I
   - AnTiMa — Discord AI assistant (Python, MongoDB, Google Gemini). Translation, cultural trivia, personalised learning prompts. Live: Discord invite; repo: github.com/Azurakun/AnTiMa. Flagship.
   - TeaFlow — Learn With AI (work in progress). AI language tutor with TTS / STT (Gemini, ElevenLabs). Repo: github.com/Azurakun/TeaFlow-AnTiMa.
   - GAIA — AI-powered text RPG engine (Gemini). Repo: github.com/Azurakun/GAIA-RPG.
+  - LensQuest — photo-quest web app for kit lenses (18–55mm, 55–250mm): random photo challenges, no password (the player's name is their save), EN/ID. Live at lensquest.vantproject.my.id, branded VANT Photography. Tech stack and repo are not recorded; do not invent them.
 - VANT Photography (sub-project): photographs taken by the developer or by other people who have joined VANT. Lives on its own gallery page, linked from the main site. Each photo carries a photographer credit, a title/caption (EN/ID), place and date, and camera details. Browsing is a masonry wall with a full-screen viewer. Photos are real work by credited people; never use stock or invented photos or credits. As of 2026-10-09 every published photo is by Achmad Arditio Sumartono, picked from his Drive event folders (MITAKOBI, Tabehoudai, ICOFEST vol. 3, CofCos II Party, Nusantara Wibufest, Dermayu JapanMatsuri Vol II, and "Random" shoots shown under the category "Other"). Event dates come from the folder names; the camera's own clock is unreliable.
 - User permitted rewriting all copy and removing what is not useful, keeping the key points: about VANT, Vibra, AnTiMa, portfolio/projects, the developer, contact.
 
 ## Brand Commitments
 
 - Names: VANT (Vibra & AnTiMa), Vibra / Vibra Store, AnTiMa (Anime Translation Manga), TeaFlow, GAIA.
-- Assets: img/VB_logo.jpg (Vibra logo), img/AnTiMa_mascot.png (mascot), img/IMG_9647.JPG (developer portrait), project screenshots.
+- Assets: img/VB_logo.jpg (Vibra logo), img/AnTiMa_mascot.png (mascot), project screenshots.
+- Credits policy (2026-10-20): the site hosts work by more than one person, so it is not a personal portfolio. Every project card carries a "Created by" line naming the real creator (AnTiMa, TeaFlow, GAIA: Achmad Arditio Sumartono; LensQuest: credited to "VANT Photography" until the creator's name is confirmed — never guess a name). There is no separate Credits section; credit lives only in the per-project "Created by" lines. Other contributors get their own project credits.
 
 ## Evidence on Hand
 
-Real project screenshots and public GitHub repos; a live Discord server for AnTiMa. Developer: Achmad Arditio Sumartono — Lead Developer, AI enthusiast; GitHub Azurakun, Instagram achmad_arditio, LinkedIn achmad-arditio-sumartono; email achmadarditios@gmail.com. No testimonials, user counts, metrics, or press exist — do not invent them.
+Real project screenshots and public GitHub repos; a live Discord server for AnTiMa. Lead developer: Achmad Arditio Sumartono (GitHub Azurakun); project contact email support@vantproject.my.id. No testimonials, user counts, metrics, or press exist — do not invent them.
 
 ## Product Principles
 
