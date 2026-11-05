@@ -43,11 +43,12 @@ Visitors read on desktop and phone, often coming from Discord or social links. I
 ## Brand Commitments
 
 - Names: VANT (Vibra & AnTiMa), Vibra / Vibra Store, AnTiMa (Anime Translation Manga), TeaFlow, GAIA.
-- Assets: img/VB_logo.jpg (Vibra logo), img/AnTiMa_mascot.png (mascot), img/IMG_9647.JPG (developer portrait), project screenshots.
+- Assets: img/VB_logo.jpg (Vibra logo), img/AnTiMa_mascot.png (mascot), project screenshots.
+- Credits policy (2026-10-20): the site hosts work by more than one person, so it is not a personal portfolio. Every project card carries a "Created by" line naming the real creator (AnTiMa, TeaFlow, GAIA: Achmad Arditio Sumartono; LensQuest: credited to "VANT Photography" until the creator's name is confirmed — never guess a name). There is no separate Credits section; credit lives only in the per-project "Created by" lines. Other contributors get their own project credits.
 
 ## Evidence on Hand
 
-Real project screenshots and public GitHub repos; a live Discord server for AnTiMa. Developer: Achmad Arditio Sumartono — Lead Developer, AI enthusiast; GitHub Azurakun, Instagram achmad_arditio, LinkedIn achmad-arditio-sumartono; email achmadarditios@gmail.com. No testimonials, user counts, metrics, or press exist — do not invent them.
+Real project screenshots and public GitHub repos; a live Discord server for AnTiMa. Lead developer: Achmad Arditio Sumartono (GitHub Azurakun); project contact email support@vantproject.my.id. No testimonials, user counts, metrics, or press exist — do not invent them.
 
 ## Product Principles
 

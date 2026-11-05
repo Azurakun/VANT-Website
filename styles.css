@@ -446,23 +446,10 @@ main, .foot { position: relative; }
 .status--live { background: transparent; color: var(--support); border-color: var(--support); }
 .status--wip::before { background: transparent; border: 1.5px solid currentColor; }
 
-/* ---------- Credits ---------- */
-
-.credits { padding: clamp(96px, 14vw, 180px) 0; }
-.credits__inner { display: grid; justify-items: center; text-align: center; gap: clamp(56px, 8vw, 96px); }
-.credits__title { margin: 0; font: 800 clamp(2rem, 4vw, 3.2rem)/1 var(--f-text); font-stretch: 125%; letter-spacing: .04em; }
-.credit { display: grid; justify-items: center; gap: 10px; max-width: 640px; }
-.credit__portrait { margin: 0 0 14px; width: 168px; aspect-ratio: 1; border-radius: 50%; overflow: hidden; }
-.credit__portrait img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); transition: filter .8s var(--ease), transform .8s var(--ease); }
-.credit__portrait:hover img { filter: none; transform: scale(1.04); }
-.credit__role { margin: 0; font-size: 1rem; color: var(--accent); }
-.credit__name { margin: 0; font: 700 clamp(1.8rem, 4vw, 3rem)/1.1 var(--f-text); font-stretch: 112%; letter-spacing: -.01em; }
-.credit__bio { margin: 10px 0 0; color: var(--fg-2); max-width: 60ch; }
-.credit__links { list-style: none; margin: 14px 0 0; padding: 0; display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
-.credit-roll { margin: 0; display: grid; gap: 40px; }
-.credit-roll div { display: grid; gap: 6px; }
-.credit-roll dt { font-size: .9rem; color: var(--fg-3); }
-.credit-roll dd { margin: 0; font-size: clamp(1.3rem, 2.2vw, 1.8rem); font-weight: 600; }
+/* "Created by" credit on each project */
+.work__credit { margin: 0; font-size: .9rem; color: var(--fg-2); }
+.work__credit span { color: var(--fg-3); margin-right: 6px; }
+.work__credit b { font-weight: 600; color: var(--fg); }
 
 /* ---------- Contact ---------- */
 

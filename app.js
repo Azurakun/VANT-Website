@@ -113,7 +113,7 @@ const convergePin = $('.pin--converge');
 let lastStep = -1;
 
 /* Chapter moods: still tracked (the dial and secrets listen for them), no longer recolour the page */
-const MOODS = { stage: 1, mission: 1, members: 1, antima: 1, teaflow: 1, gaia: 1, lensquest: 1, next: 1, credits: 1, contact: 1 };
+const MOODS = { stage: 1, mission: 1, members: 1, antima: 1, teaflow: 1, gaia: 1, lensquest: 1, next: 1, contact: 1 };
 let mood = '';
 function setMood(name) {
     if (!MOODS[name] || name === mood) return;

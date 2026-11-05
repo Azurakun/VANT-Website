@@ -32,7 +32,6 @@ export const translations = {
         'nav-about': 'Mission',
         'nav-members': 'Vibra × AnTiMa',
         'nav-works': 'Works',
-        'nav-credits': 'Credits',
         'nav-contact': 'Contact',
         'jump-label': 'Chapters',
         'nav-photo': 'Photography',
@@ -89,12 +88,7 @@ export const translations = {
         'next-body': 'The next one is open. Bring an idea, a community, a skill or a project, and let’s make it together.',
         'next-link': 'Start a conversation',
 
-        'credits-title': 'Credits',
-        'cr-lead': 'Lead developer, AI & prompt engineering',
-        'cr-bio': 'I build AI-powered applications and design the prompts that make them behave. I got hooked on how machines learn and adapt, and now I point that curiosity at tools for the communities I’m part of. Anime and games are where I unwind, and where most of VANT’s ideas come from.',
-        'cr-simplify': 'Legacy & guiding idea · Vibra Store, 2023',
-        'cr-core': 'Creative & technical core',
-        'cr-stack': 'Built with',
+        'created-by': 'Created by',
 
         'contact-title': 'Want to build something together?',
         'contact-body': 'Creators, developers, photographers, practitioners and partners: write to us about a project or a collaboration.',
@@ -141,7 +135,6 @@ export const translations = {
         'nav-about': 'Misi',
         'nav-members': 'Vibra × AnTiMa',
         'nav-works': 'Karya',
-        'nav-credits': 'Kredit',
         'nav-contact': 'Kontak',
         'jump-label': 'Bab',
         'nav-photo': 'Fotografi',
@@ -198,12 +191,7 @@ export const translations = {
         'next-body': 'Slot berikutnya masih terbuka. Bawa ide, komunitas, keahlian, atau proyek, dan ayo buat bersama.',
         'next-link': 'Mulai percakapan',
 
-        'credits-title': 'Kredit',
-        'cr-lead': 'Pengembang utama, AI & prompt engineering',
-        'cr-bio': 'Saya membuat aplikasi bertenaga AI dan merancang prompt yang membuatnya bekerja dengan baik. Saya terpikat pada cara mesin belajar dan beradaptasi, dan kini rasa penasaran itu saya arahkan ke alat untuk komunitas tempat saya berada. Anime dan game adalah tempat saya bersantai, dan sumber sebagian besar ide VANT.',
-        'cr-simplify': 'Warisan & gagasan utama · Vibra Store, 2023',
-        'cr-core': 'Inti kreatif & teknis',
-        'cr-stack': 'Dibuat dengan',
+        'created-by': 'Dibuat oleh',
 
         'contact-title': 'Mau membangun sesuatu bersama?',
         'contact-body': 'Kreator, pengembang, fotografer, praktisi, dan mitra: kirimi kami pesan tentang proyek atau kolaborasi.',
